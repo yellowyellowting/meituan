@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 100px;
+}
+body{
+    font-size: 0.16rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+input {
+    outline: none;
+}
+.clear{
+    clear: both;
+}
+#header {
+    width: 100%;
+    height: 1.3rem;
+    min-width: 12.8rem;
+}
+#header .wrapper {
+    width: 9.8rem;
+    height: 1.3rem;
+    margin: auto;
+}
+#header .wrapper img{
+    width: 0.82rem;
+    height: 0.54rem;
+    padding-top: 0.3rem;
+
+
+}
+#content .content-wrapper {
+    width: 9.8rem;
+    height: 4rem;
+    margin: auto;
+}
+#content .content-wrapper .login-panel{
+    width: 2.7rem;
+    height: 3.42rem;
+    float: right;
+    margin-right: 1rem; 
+}
+#content .content-wrapper .login-panel .validate-info{
+    width: 2.6rem;
+    height: 0.24rem;
+    line-height: 0.26rem;
+    padding: 0.05rem 0 0.05rem 0.1rem;
+    background: #fff6dc;
+    border: 0.01rem solid #f4622e;
+    display: none;
+}
+#content .content-wrapper .login-panel .validate-info .remend{
+  
+    vertical-align:center;
+}
+#content .content-wrapper .login-panel .validate-info[active="true"]{
+    display: inline-block;
+}
+#content .content-wrapper .login-panel .validate-info .validateTip {
+    font-size: 0.12rem;
+    color: black;
+}
+#content .content-wrapper .login-panel .title .tip{
+    font-size: 0.14rem;
+}
+#content .content-wrapper .login-panel .title .code{
+    font-size: 0.12rem;
+    float: right;
+}
+#content .content-wrapper .login-panel .title .code .icon-iphone{
+    font: 0.14rem;
+    color: rgb(69, 171, 189);;
+}
+#content .content-wrapper .login-panel .formitem {
+    width: 2.7rem;
+    height: 0.36rem;
+    padding: 0.08rem 0;
+    position: relative;
+}
+#content .content-wrapper .login-panel .title .code:hover{
+    text-decoration: underline;
+}
+#content .content-wrapper .login-panel .formitem input{
+    width: 2.3rem;
+    height: 0.24rem;
+    padding: 0.05rem 0.05rem 0.05rem 0.33rem;
+  
+}
+
+#content .content-wrapper .login-panel .formitem input.err{
+    border: 0.01rem solid  #f4622e;
+}
+#content .content-wrapper .login-panel .formitem .inner{
+    position: absolute;
+    top: 0.2rem;
+    left: 0.1rem;
+    color: #ccc;
+}
+
+#content .content-wrapper .login-panel .forget {
+    width: 2.7rem;
+    text-align: right;
+    font-size: 0.12rem;
+    color:  rgb(69, 171, 189);
+}
+#content .content-wrapper .login-panel .formitem .btn{
+    width: 2.7rem;
+    height: 0.36rem;
+    font-size: 0.14rem;
+    padding: 0.05rem 0.15rem 0.05rem 0.23rem;
+    text-align: center;
+    color: #ffffff;
+    background:  #2eb7aa;
+    background-image: linear-gradient(to bottom,#2bb8aa,#2eb7aa);
+    cursor: pointer;
+}
+#content .content-wrapper .login-panel .formitem .btn:hover {
+    background-color: #63b4ac;
+    background-image: linear-gradient(to bottom,#2bb8aa,#2eb7aa);
+}
+
+#content .content-wrapper .login-panel .formitem .signup-guide{
+    color: #b6b3b3;
+}
+
+#content .content-wrapper .login-panel .formitem a{
+    font-size: 0.14rem;
+    color:  rgb(69, 171, 189);
+}
+#content .content-wrapper .login-panel .cooperration{
+    width: 2.7rem;
+    height: 0.49rem;
+}
+#content .content-wrapper .login-panel .cooperration .throught-line{
+    display: inline-block;
+    width: 0.55rem;
+    height: 0;
+    border-top: 0.01rem solid #ccc;
+}
+#content .content-wrapper .login-panel .cooperration .title{
+    font-size: 0.14rem;
+    color: rgb(167, 163, 163);
+    font-weight: 300;
+    padding: 0 0.1rem;
+}
+#content .content-wrapper .login-panel .cooperration .login-icon{
+    padding-left: 1rem;
+    padding-top: 0.1rem;
+}
+#content .content-wrapper .login-panel .cooperration .icon-qq{
+    color: rgb(76, 174, 212);
+}
+#content .content-wrapper .login-panel .cooperration .icon-weibo{
+    color: #fd9786;
+}
+
+#content .content-wrapper .login-panel .admin{
+    text-align: right;
+    font-size: 0.12rem;
+   
+}
+#content .content-wrapper .login-panel .admin label{
+    color: rgb(69, 171, 189);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="wraper">
+            <div class="logo"></div>
+            <div class="login">
+                <span class="remend">已有美团账号？</span>
+                <a class="login-btn">登录</a>
+            </div>
+        </header>
+        </div>
+        <div class="clear"></div>
+        <main id="cotent">
+            <form action="" method="POST">
+                <div class="formItem">
+                    <label>手机号</label><input type="text" name="tell" />
+                    <img class="remend tellRemend"  src="../images/tip.png"></img>
+                    <span class="tip">注册成功后，全美团通用</span>
+                </div>
+                <div class="formItem formItem-btn">
+                    <button type="buttom" class="verifycode-btn">获取短信动态码</button>
+                </div>
+                <div class="formItem">
+                    <label>短信动态码</label><input type="text" name="verifycode" />
+                    <img class="remend codeRemend" src="../images/tip.png"></img>
+                    <span class="verifycodeTip"></span>
+                </div>
+                <div class="formItem">
+                    <label>创建密码</label><input type="password" name="password" />
+                    <img class="remend passwordRemend"  src="../images/tip.png"></img>
+                    <span class="passwordTip"></span>
+                </div>
+                <div class="formItem">
+                    <label>确认密码</label><input type="password" name="repassword" />
+                    <img class="remend repasswordRemend"  src="../images/tip.png"></img>
+                    <span class="repasswordTip" ></span>
+                </div>
+                <div class="formItem formItem-agree">
+                    <button type="button" class="agreeRgiste">同意以下协议并注册</button>
+                </div>
+                <div class="formItem formItem-protocol">
+                    <a href="#" class="protocol">《美团网用户协议》</a>
+                </div>
+            </form>
+        </main>
+    <script src="../js/user.js"></script>
+</body>
+
+</html>

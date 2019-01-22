@@ -1,0 +1,697 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 100px;
+}
+
+body {
+    font-size: 0.16rem;
+    background: rgb(248, 248, 248);
+}
+
+a {
+    text-decoration: none;
+}
+
+.clear {
+    clear: both;
+}
+
+#header {
+    width: 12.8rem;
+    height: 0.4rem;
+    color: rgb(153, 153, 153);
+    font-size: 0.12rem;
+    min-width: 11.9rem;
+    background-color: rgb(248, 248, 248);
+    font-weight: 350;
+}
+
+#header .header-wrap {
+    margin: 0 0.45rem;
+    height: 0.4rem;
+}
+
+#header .header-bar-position {
+    padding-top: 0.12rem;
+}
+
+#header .icon-local-icon, #header .current-city, #header .change-city, #header .near-citys, #header .user-entry {
+    float: left;
+    margin: 0 0.02rem;
+}
+
+#header .change-city {
+    border: 0.01rem solid rgb(229, 229, 229);
+    border-radius: 0.02rem;
+    padding: 0 0.01rem;
+}
+
+.header-wrap .near-citys {
+    color: rgb(153, 153, 153);
+    margin: 0 0.04rem;
+    font-weight: 300;
+}
+
+#header .user-entry .growth-entry {
+    margin: 0 0.1rem;
+    color: rgb(49, 187, 172);
+    cursor: pointer;
+}
+
+#header .user-entry .extra-entry:hover {
+    color: rgb(49, 187, 172);
+}
+
+#header .header-bar-nav {
+    float: right;
+    margin-right: 0.19rem;
+}
+
+#header .header-bar-nav .header-nav-first {
+    list-style: none;
+    float: left;
+}
+
+#header .header-bar-nav .header-nav-first .has-child {
+    float: left;
+    padding: 0 0.14rem;
+}
+
+#header .header-bar-nav .header-nav-first .has-child a {
+    color: rgb(153, 153, 153);
+}
+
+#header .header-bar-nav .header-nav-first .has-child:first-child {
+    position: relative;
+}
+
+#header .header-bar-nav .header-nav-first>.has-child:nth-child(3) {
+    position: relative;
+}
+
+#header .header-bar-nav .header-nav-first>.has-child:nth-child(4) {
+    position: relative;
+}
+
+#header .header-bar-nav .header-nav-first .has-child:first-child:hover .header-nav-my {
+    display: block;
+}
+
+#header .header-bar-nav .header-nav-first>li:nth-child(2):hover a {
+    color: rgb(49, 187, 172);
+}
+
+#header .header-bar-nav .header-nav-first .has-child .header-nav-second {
+    list-style: none;
+    background: rgb(255, 255, 255);
+    border-radius: 0.02rem;
+    box-shadow: 0.001rem 0.001rem 0.05rem #cccccc;
+    text-align: center;
+}
+
+#header .header-bar-nav .header-nav-first .has-child .header-nav-my {
+    position: absolute;
+    right: 0.05rem;
+    top: -0.12rem;
+    width: 0.76rem;
+    height: 1.8rem;
+    display: none;
+    padding-top: 0.12rem;
+}
+
+#header .header-bar-nav .header-nav-first .has-child .header-nav-second li {
+    padding-bottom: 0.18rem;
+    font-weight: 300;
+}
+
+#header .header-bar-nav .header-nav-first .has-child .header-nav-second li:hover a {
+    color: rgb(49, 187, 172);
+}
+
+#header .header-bar-nav .header-nav-first .has-child .header-nav-merchant {
+    position: absolute;
+    right: -0.12rem;
+    top: -0.12rem;
+    width: 1rem;
+    height: 2.4rem;
+    padding-top: 0.12rem;
+    display: none;
+}
+
+#header .header-bar-nav .header-nav-first>.has-child:nth-child(3):hover .header-nav-merchant {
+    display: block;
+}
+
+#header .header-bar-nav .header-nav-first>.has-child:nth-child(4) .header-nav-second {
+    position: absolute;
+    right: -0.2rem;
+    top: 0.29rem;
+    z-index: 1;
+    width: 12rem;
+    height: 3rem;
+    display: none;
+}
+
+/* #header .header-bar-nav .header-nav-first > .has-child:nth-child(4):hover {
+    background: rgb(255, 255, 255);
+    border-radius: 0.02rem;
+    box-shadow: 0.001rem 0.001rem 0.05rem #cccccc;
+} */
+
+#header .header-bar-nav .header-nav-first>.has-child:nth-child(4):hover .header-nav-second {
+    display: block;
+}
+
+#header .header-bar-nav .header-nav-first>.has-child:nth-child(4) .header-nav-site .header-jiulv {
+    width: 2.34rem;
+    font-size: 12px;
+    text-align: center;
+}
+
+#header .header-wrap::after {
+    display: block;
+    clear: both;
+    height: 0;
+    content: "";
+    visibility: hidden;
+}
+
+#header .header-content-wrap {
+    background: #ffffff;
+    box-shadow: 0.001rem 0.01rem 0.05rem #cccccc;
+    padding: 0 0.45rem;
+    width: 12.8rem;
+    margin: auto;
+    height: 1.22rem;
+    padding-bottom: 0.35rem;
+}
+
+#header .header-content-wrap .header-content .header-title-module {
+    width: 2.20rem;
+    height: 0.54rem;
+    padding: 0.28rem 0.6rem 0.4rem 0;
+    float: left;
+  
+}
+
+#header .header-content-wrap .header-content .header-title-module .header-title img {
+    width: 1.26rem;
+    height: 0.46rem;
+}
+
+#header .header-content-wrap .header-search-module {
+    width: 5.52rem;
+    height: 0.67rem;
+    padding: 0.28rem 0.6rem 0.4rem 0;
+    float: left;
+    position: relative;
+}
+#header .header-content-wrap .header-search-module .header-search-block{
+    height: 0.4rem;
+    padding-bottom: 0.1rem;
+}
+#header .header-content-wrap .header-search-module input.header-search-input {
+    width: 4.42rem;
+    height: 0.2rem;
+    padding: 0.1rem;
+    color: 0.15rem;
+    border: 0.01rem solid rgb(49, 187, 172);
+    border-top-left-radius: 0.02rem;
+    border-bottom-left-radius: 0.02rem;
+    cursor: text;
+    float: left;
+    border-right: 0;
+    font-size: 0.15rem;
+    font-weight: 300;
+    outline: none;
+}
+
+#header .header-content-wrap .header-search-module .header-search-btn {
+    width: 0.88rem;
+    height: 0.42rem;
+    float: left;
+    border: 0.01rem solid rgb(19, 209, 190);
+    cursor: pointer;
+    background: rgb(19, 209, 190);
+    border-top-right-radius: 0.02rem;
+    border-bottom-right-radius: 0.02rem;
+    outline: none;
+}
+
+#header .header-content-wrap .header-search-module .header-search-btn .iconfont {
+    text-align: center;
+    font-size: 0.2rem;
+    color: #ffffff;
+}
+
+#header .header-content-wrap .header-search-suggest {
+    width: 4.62rem;
+    height: 0.68rem;
+    position: absolute;
+    top:0.26rem;
+    display: none;
+    z-index: 99;
+   
+    /* background: red; */
+}
+
+#header .header-content-wrap .header-search-suggest[active="true"]{
+    display: block;
+}
+#header .header-content-wrap .header-search-suggest .header-search-noinput {
+    width: 4.58rem;
+    height: 0.7rem;
+    padding: 0rem 0 0 0.05rem;
+    margin-top: 0.45rem;
+    border-bottom-right-radius: 0.02rem;
+    border-bottom-left-radius: 0.02rem;
+    border-radius: 0.02rem;
+    box-shadow: 0.001rem 0.01rem 0.05rem #cccccc;
+    background: rgb(255, 254, 254);
+    /* background: red; */
+}
+
+#header .header-content-wrap .header-search-suggest .header-search-noinput h6 {
+    font-weight: 380;
+    padding-bottom: 0.1rem;
+}
+
+#header .header-content-wrap .header-search-suggest .header-search-noinput a {
+    color: #999;
+    font-weight: 340;
+    padding-right: 0.05rem;
+}
+
+#header .header-content-wrap .header-search-suggest .header-search-noinput a:hover {
+    color: rgb(19, 209, 190);
+}
+
+#header .header-content-wrap .header-content .header-hotword>a {
+    color: #999;
+    font-weight: 340;
+}
+#header .header-content-wrap .header-content .header-hotword>a:hover{
+    color: rgb(19, 209, 190);
+}
+#ract .wrapper {
+    width: 11.9rem;
+    height: 70rem;
+    margin: auto;
+    margin-top: 0.3rem;
+}
+#ract .wrapper .wraper-item{
+    margin-bottom: 0.25rem;
+}
+#ract .wrapper .breadcrumbs{
+    width: 100%;
+    padding: 0.15rem 0;
+    font-size: 0.12rem;
+  
+}
+#ract .wrapper .breadcrumbs a{
+    color: #666;
+    padding-right: 0.05rem;
+}
+#ract .wrapper .details{
+    width: 11.9rem;
+    height: 3.3rem;
+    font-size: 0.12rem;
+    color: #666;
+    background-color: #fff;
+    border-radius: 0.1rem;
+    padding: 0.2re 0.2rem 0.33rem;
+    border: 0.01rem solid #e5e5e5;
+    box-shadow: 0.01rem 0.02rem 0.14rem 0 #cccccc;
+}
+
+#ract .wrapper .details .d-left{
+    width: 7.48rem;
+    height: 2.74rem;
+    float: left;
+   
+}
+#ract .wrapper .details .d-left .shop-info {
+    width: 100%;
+    height: 0.37rem;
+    padding: 0.2rem;
+}
+#ract .wrapper .details .d-left .shop-info .name{
+    font-size: 0.26rem;
+    color: #666;
+
+    float: left;
+}
+#ract .wrapper .details .d-left .shop-info .flag{
+    color: rgb(85, 216, 216);
+    float: right;
+    line-height: 0.37rem;
+}
+#ract .wrapper .details .d-left .price-info .star-cont ul{
+   list-style: none;
+   float: left;
+}
+
+#ract .wrapper .details .d-left .price-info .price {
+    font-size: 0.14rem;
+    padding-left: 0.4rem;
+}
+#ract .wrapper .details .d-left .address{
+    width: 7.28rem;
+    height: 0.9rem;
+    margin: auto;
+    padding: 0.15rem 0 0.1rem 0.2rem;
+    font-size: 0.14rem;
+    border-bottom: 0.01rem solid #e5e5e5;
+    border-top: 0.01rem solid #e5e5e5;
+    margin-left: 0.2rem;
+}
+#ract .wrapper .details .d-left .address p{
+    margin-bottom: 0.1rem;
+}
+#ract .wrapper .details .d-left .tags{
+    padding: 0.1rem 0 0 0.4rem;
+}
+#ract .wrapper .details .d-left .tags img{
+    width: 0.24rem;
+    height: 0.24rem;
+    padding: 0.1rem;
+}
+#ract .wrapper .details .d-right {
+    float: right;
+    padding-right: 0.2rem;
+    padding-top: 0.2rem;
+}
+#ract .wrapper .details .d-right .big-picture{
+    width: 3.8rem;
+    height: 2.14rem;
+    border-radius: 0.05rem;
+}
+#ract .wrapper .details .d-right .picture{
+    width: 0.92rem;
+    height: 0.5rem;
+    border-radius: 0.05rem;
+}
+#ract .wrapper h3{
+    padding: 0.1rem 0;
+}
+#ract .wrapper  .preferential {
+    width: 9.08rem;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 10px 20px 20px;
+    color: #222;
+    margin-bottom: 0.1rem;
+
+}
+
+#ract .wrapper  .preferential .preferential-contents h4{
+    padding: 0.1rem 0 0 0;
+}
+#ract .wrapper  .preferential .preferential-contents .content{
+    position: relative;
+   margin-bottom: 0.2rem;
+   padding-top: 0.2rem;
+}
+#ract .wrapper  .preferential .preferential-contents .content img{
+    border-radius: 0.05rem;
+    float: left;
+}
+#ract .wrapper  .preferential .preferential-contents .content .dishe-info {
+    float: left;
+    padding-left: 0.2rem;
+}
+#ract .wrapper  .preferential .preferential-contents .content .dishe-info img{
+    width: 0.16rem;
+    height: 0.16rem;
+    float: left;
+    margin-left: 0.1rem;
+}
+#ract .wrapper  .preferential .preferential-contents .content .dishe-info .title{
+    color: #222;
+    font-weight: 350;
+    float: left;
+
+}
+#ract .wrapper  .preferential .preferential-contents .content .dishe-info .count{
+    font-size: 0.12rem;
+    color: #666;
+}
+#ract .wrapper  .preferential .preferential-contents .content .price-info {
+    color:#f60;
+    font-size: 0.3rem;
+}
+#ract .wrapper  .preferential .preferential-contents .content .price-info .store-price{
+    font-size: 0.12rem;
+    font-weight: 300;
+    color: #999;
+}
+#ract .wrapper  .preferential .preferential-contents .content .buy{
+    background: #f90;
+    color: #fff;
+    display: inline-block;
+    width: 1.2rem;
+    height: 0.4rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    line-height: 0.4rem;
+    position: absolute;
+    top: 40%;
+    right:0.2rem;
+}
+#ract .wrapper  .preferential .preferential-contents .content .line{
+    width: 9.08rem;
+    height: 0rem;
+    border-bottom: 0.01rem solid rgb(229, 229, 229);
+    position: absolute;
+    bottom: -0.2rem;
+}
+#ract .wrapper  .preferential .preferential-contents .content .pricetag{
+    float: left;
+    width: 1.4rem;
+    height: 0.89rem;
+    background-image: url("../images/pricetag.png");
+    background-size: 100% 100%;
+    text-align: center;
+    padding: 0.11rem 0.1rem 0;
+    color: #333;
+    font-size: 0.14rem;
+}
+#ract .wrapper  .preferential .preferential-contents .content .pricetag .price-info .price{
+
+    font-size: 0.3rem;
+    color: #f60;
+    border-bottom: 1px dashed #ccc;
+    line-height: 0.36rem;
+    padding-bottom: 0.15rem;
+}
+#ract .wrapper  .recomend{
+    padding-top: 0.3rem;
+}
+#ract .wrapper  .preferential .img-box ul{
+    list-style: none;
+ 
+}
+#ract .wrapper  .preferential .img-box ul li{
+    float: left;
+    padding: 0 0.1rem
+}
+#ract .wrapper  .preferential .img-box ul li .pic {
+    position: relative;
+}
+#ract .wrapper  .preferential .img-box ul li .pic img{
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 0.04rem;
+
+}
+#ract .wrapper  .preferential .img-box ul li .pic .truncate {
+    width: 1.3rem;
+    padding: 0.08rem 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0.7;
+    position: absolute;
+    bottom: 0.05rem;
+    color: #fff;
+    font-size: 0.14rem;
+    text-align: center;
+    border-radius: 0.04rem;
+    font-weight: 300;
+  
+}
+#ract .wrapper .preferential .img-box ul li .pic .truncate p{
+    width: 0.78rem;
+   white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    display: inline-block;
+}
+#ract .wrapper .recomend .list {
+    padding: 0.1rem;
+}
+#ract .wrapper .recomend .list span{
+    margin-right: 0.2rem;
+    margin-bottom: 0.19rem;
+    color: #333;
+}
+#ract .wrapper .commend{
+    margin-top: 0.3rem;
+}
+#ract .wrapper .commend .com-cont .tags{
+    list-style: none;
+    padding-top: 0.1rem;
+}
+#ract .wrapper .commend .com-cont .tags li{
+    width: 0.81rem;
+    height: .34rem;
+    border: 0.01rem solid rgb(229, 229, 229);
+    border-radius: 0.02rem;
+    padding: 0 0.1rem;
+    margin: 0 0.1rem 0.1rem 0;
+    float: left;
+}
+#ract .wrapper .commend .com-cont .only-picture {
+    padding: 0.3rem 0;
+}
+#ract .wrapper .commend .com-cont .only-picture span{
+font-size: 0.14rem;
+color: #666;
+}
+#ract .wrapper .commend .com-cont .item {
+    padding-top: 0.3rem;
+}
+#ract .wrapper .commend .com-cont .item-img{
+    width: 0.6rem;
+    height: 0.6rem;
+    background: #999;
+    border-radius: 0.3rem;
+    float: left;
+}
+#ract .wrapper .commend .com-cont .item .item-img img{
+    width: 0.6rem;
+    height: 0.6rem;
+}
+
+#ract .wrapper .commend .com-cont .item .commend-info {
+    width: 8.28rem;
+    height: 3.6rem;
+    padding-left: 0.2rem;
+    float: left;
+}
+#ract .wrapper .commend .com-cont .item .commend-info .name{
+    font-size: 16px;
+    color: #222;
+}
+#ract .wrapper .commend .com-cont .item .commend-info .date{
+    font-size: 12px;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+}
+#ract .wrapper .commend .com-cont .item .commend-info .source {
+    padding: 0.05rem 0;
+
+}
+#ract .wrapper .commend .com-cont .item .commend-info .source .sort-cont{
+    list-style: none;
+
+}
+#ract .wrapper .commend .com-cont .item .commend-info .source .sort-cont li{
+    float: left;
+}
+#ract .wrapper .commend .com-cont .item .commend-info .desc{
+    font-size: 0.14rem;
+    padding-top: 0.3rem;
+    color: #666;
+    font-weight: 300;
+} 
+#ract .wrapper .commend .com-cont .item .commend-info .noShowBigImg{
+    width: 8.19rem;
+    height: 1.9rem;
+}
+#ract .wrapper .commend .com-cont .item .commend-info .noShowBigImg .paginatedThumbnails{
+    width: 8.19rem;
+    height: 1.6rem;
+}
+#ract .wrapper .commend .com-cont .item .commend-info .noShowBigImg .paginatedThumbnails .thumbnails{
+    width: 1000rem;
+    overflow: hidden;
+}
+#ract .wrapper .commend .com-cont .item .commend-info .noShowBigImg .paginatedThumbnails .thumbnails .thumbnail{
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0.1rem;
+    float: left;
+}
+#ract .wrapper .commend .com-cont .item .commend-info .noShowBigImg .paginatedThumbnails .thumbnails .thumbnail img{
+    width: 1.4rem;
+    height: 1.4rem;
+
+}
+#ract .wrapper .commend .com-cont .item .commend-info .like-cont {
+    float: right;
+}
+
+#ract .wrapper .commend .com-cont .item .commend-info .like-cont span{
+    font-size: 0.12rem;
+    color: #666;
+}
+#ract .wrapper .commend .com-cont .item .line{
+    border-bottom: 0.01rem solid rgb(231, 230, 230);
+    width: 8.28rem;
+    margin: auto;
+    margin: 0.2rem 0 0.3rem 0;
+}
+#ract .wrapper .left-container{
+    float: left;
+
+}
+#ract .wrapper .right-container{
+    width: 2.3rem;
+    height: 30rem;
+    float: right;
+    /* background: #f60; */
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    color: #222;
+}
+#ract .wrapper .right-container .gess h4{
+    padding: 0.1rem;
+}
+#ract .wrapper .right-container .gess-lists ul{
+    list-style: none;
+    width: 1.88rem;
+    margin: auto;
+}
+#ract .wrapper .right-container .gess-lists ul li{
+    width: 1.88rem; 
+    height: 2.06rem;
+    margin-bottom: 0.2rem;
+}
+#ract .wrapper .right-container .gess-lists ul li a img{
+    border-radius: 0.04rem;
+}
+#ract .wrapper .right-container .gess-lists ul li a .title {
+    font-size: 14px;
+
+    color: #222;
+    margin: 10px 0 4px;
+    font-weight: 300;
+}
+#ract .wrapper .right-container .gess-lists ul li a .desc{
+    font-size: 12px;
+    color: #999;
+    font-weight: 300;
+} 
+#ract .wrapper .right-container .gess-lists ul li a .price{
+    font-weight: 400;
+    font-size: 20px;
+    color: #f60;
+
+}

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var data = [
+            {
+                "category": "全部",
+                "remendList": [
+                    {
+                        "id": 1,
+                        "title": "重庆地龙老火锅",
+                        "subTitle": "升级豪华8人餐，有赠品",
+                        "url": "http://p0.meituan.net/deal/327f344a4e18062d2fde6e9030c2ec9a655569.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥442",
+                        "sold": "温江大学城"
+                    },
+                    {
+                        "id": 2,
+                        "title": "港益海鲜茶餐厅",
+                        "subTitle": "下午茶套餐A，建议单人使用",
+                        "url": "http://p0.meituan.net/msmerchant/e15b0e829039812c8aaf14e16c37f5f342019.jpg@736w_416h_1e_1c",
+                        "currentPrice": 125,
+                        "oldPrice": "门市价¥50",
+                        "sold": "大业路"
+                    },
+                    {
+                        "id": 3,
+                        "title": "成都茂业JW万豪酒店·万豪中餐厅",
+                        "subTitle": "'」港式点心任点任食'自助午餐",
+                        "url": "http://p0.meituan.net/mogu/e082e4db3269c446257aeb3d2e50375e183195.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥188",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "id": 4,
+                        "title": "鹿野茶事（盐市口店）",
+                        "subTitle": "小鹿初抹1份",
+                        "url": "http://p0.meituan.net/msmerchant/7d970fb182bd2d4b2e56e2b363596a96309530.png@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥18",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "id": 5,
+                        "title": "班花麻辣烫（奎星楼总店）",
+                        "subTitle": "开学2人餐，提供免费WiFi",
+                        "url": "http://p1.meituan.net/msmerchant/db1ed6ee0f57cc1537a9e9691cc00b3a105376.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥106",
+                        "sold": "宽窄巷子"
+                    },
+                    {
+                        "id": 6,
+                        "title": "天菱阁酒楼（通惠门路店）",
+                        "subTitle": "缤纷美味12人餐",
+                        "url": "http://p1.meituan.net/deal/__47874014__8480546.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥2038",
+                        "sold": "宽窄巷子"
+                    }
+                ]
+            },
+            {
+                "category": "约会聚餐",
+                "remendList": [
+                    {
+                        "title": "重庆地龙老火锅",
+                        "subTitle": "升级豪华8人餐，有赠品",
+                        "url": "http://p0.meituan.net/deal/327f344a4e18062d2fde6e9030c2ec9a655569.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥442",
+                        "sold": "温江大学城"
+                    },
+                    {
+                        "title": "港益海鲜茶餐厅",
+                        "subTitle": "下午茶套餐A，建议单人使用",
+                        "url": "http://p0.meituan.net/msmerchant/e15b0e829039812c8aaf14e16c37f5f342019.jpg@736w_416h_1e_1c",
+                        "currentPrice": 125,
+                        "oldPrice": "门市价¥50",
+                        "sold": "大业路"
+                    },
+                    {
+                        "title": "成都茂业JW万豪酒店·万豪中餐厅",
+                        "subTitle": "'」港式点心任点任食'自助午餐",
+                        "url": "http://p0.meituan.net/mogu/e082e4db3269c446257aeb3d2e50375e183195.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥188",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "title": "鹿野茶事（盐市口店）",
+                        "subTitle": "小鹿初抹1份",
+                        "url": "http://p0.meituan.net/msmerchant/7d970fb182bd2d4b2e56e2b363596a96309530.png@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥18",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "title": "班花麻辣烫（奎星楼总店）",
+                        "subTitle": "开学2人餐，提供免费WiFi",
+                        "url": "http://p1.meituan.net/msmerchant/db1ed6ee0f57cc1537a9e9691cc00b3a105376.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥106",
+                        "sold": "宽窄巷子"
+                    },
+                    {
+                        "title": "天菱阁酒楼（通惠门路店）",
+                        "subTitle": "缤纷美味12人餐",
+                        "url": "http://p1.meituan.net/deal/__47874014__8480546.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥2038",
+                        "sold": "宽窄巷子"
+                    }
+                ]
+            },
+            {
+                "category": "丽人SPA",
+                "remendList": [
+                    {
+                        "title": "重庆地龙老火锅",
+                        "subTitle": "升级豪华8人餐，有赠品",
+                        "url": "http://p0.meituan.net/deal/327f344a4e18062d2fde6e9030c2ec9a655569.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥442",
+                        "sold": "温江大学城"
+                    },
+                    {
+                        "title": "港益海鲜茶餐厅",
+                        "subTitle": "下午茶套餐A，建议单人使用",
+                        "url": "http://p0.meituan.net/msmerchant/e15b0e829039812c8aaf14e16c37f5f342019.jpg@736w_416h_1e_1c",
+                        "currentPrice": 125,
+                        "oldPrice": "门市价¥50",
+                        "sold": "大业路"
+                    },
+                    {
+                        "title": "成都茂业JW万豪酒店·万豪中餐厅",
+                        "subTitle": "'」港式点心任点任食'自助午餐",
+                        "url": "http://p0.meituan.net/mogu/e082e4db3269c446257aeb3d2e50375e183195.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥188",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "title": "鹿野茶事（盐市口店）",
+                        "subTitle": "小鹿初抹1份",
+                        "url": "http://p0.meituan.net/msmerchant/7d970fb182bd2d4b2e56e2b363596a96309530.png@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥18",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "title": "班花麻辣烫（奎星楼总店）",
+                        "subTitle": "开学2人餐，提供免费WiFi",
+                        "url": "http://p1.meituan.net/msmerchant/db1ed6ee0f57cc1537a9e9691cc00b3a105376.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥106",
+                        "sold": "宽窄巷子"
+                    },
+                    {
+                        "title": "天菱阁酒楼（通惠门路店）",
+                        "subTitle": "缤纷美味12人餐",
+                        "url": "http://p1.meituan.net/deal/__47874014__8480546.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥2038",
+                        "sold": "宽窄巷子"
+                    }
+                ]
+            },
+            {
+                "category": "电影演出",
+                "remendList": [
+                    {
+                        "title": "重庆地龙老火锅",
+                        "subTitle": "升级豪华8人餐，有赠品",
+                        "url": "http://p0.meituan.net/deal/327f344a4e18062d2fde6e9030c2ec9a655569.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥442",
+                        "sold": "温江大学城"
+                    },
+                    {
+                        "title": "港益海鲜茶餐厅",
+                        "subTitle": "下午茶套餐A，建议单人使用",
+                        "url": "http://p0.meituan.net/msmerchant/e15b0e829039812c8aaf14e16c37f5f342019.jpg@736w_416h_1e_1c",
+                        "currentPrice": 125,
+                        "oldPrice": "门市价¥50",
+                        "sold": "大业路"
+                    },
+                    {
+                        "title": "成都茂业JW万豪酒店·万豪中餐厅",
+                        "subTitle": "'」港式点心任点任食'自助午餐",
+                        "url": "http://p0.meituan.net/mogu/e082e4db3269c446257aeb3d2e50375e183195.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥188",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "title": "鹿野茶事（盐市口店）",
+                        "subTitle": "小鹿初抹1份",
+                        "url": "http://p0.meituan.net/msmerchant/7d970fb182bd2d4b2e56e2b363596a96309530.png@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥18",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "title": "班花麻辣烫（奎星楼总店）",
+                        "subTitle": "开学2人餐，提供免费WiFi",
+                        "url": "http://p1.meituan.net/msmerchant/db1ed6ee0f57cc1537a9e9691cc00b3a105376.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥106",
+                        "sold": "宽窄巷子"
+                    },
+                    {
+                        "title": "天菱阁酒楼（通惠门路店）",
+                        "subTitle": "缤纷美味12人餐",
+                        "url": "http://p1.meituan.net/deal/__47874014__8480546.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥2038",
+                        "sold": "宽窄巷子"
+                    }
+                ]
+            },
+            {
+                "category": "品质出游",
+                "remendList": [
+                    {
+                        "title": "重庆地龙老火锅",
+                        "subTitle": "升级豪华8人餐，有赠品",
+                        "url": "http://p0.meituan.net/deal/327f344a4e18062d2fde6e9030c2ec9a655569.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥442",
+                        "sold": "温江大学城"
+                    },
+                    {
+                        "title": "港益海鲜茶餐厅",
+                        "subTitle": "下午茶套餐A，建议单人使用",
+                        "url": "http://p0.meituan.net/msmerchant/e15b0e829039812c8aaf14e16c37f5f342019.jpg@736w_416h_1e_1c",
+                        "currentPrice": 125,
+                        "oldPrice": "门市价¥50",
+                        "sold": "大业路"
+                    },
+                    {
+                        "title": "成都茂业JW万豪酒店·万豪中餐厅",
+                        "subTitle": "'」港式点心任点任食'自助午餐",
+                        "url": "http://p0.meituan.net/mogu/e082e4db3269c446257aeb3d2e50375e183195.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥188",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "title": "鹿野茶事（盐市口店）",
+                        "subTitle": "小鹿初抹1份",
+                        "url": "http://p0.meituan.net/msmerchant/7d970fb182bd2d4b2e56e2b363596a96309530.png@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥18",
+                        "sold": "盐市口"
+                    },
+                    {
+                        "title": "班花麻辣烫（奎星楼总店）",
+                        "subTitle": "开学2人餐，提供免费WiFi",
+                        "url": "http://p1.meituan.net/msmerchant/db1ed6ee0f57cc1537a9e9691cc00b3a105376.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥106",
+                        "sold": "宽窄巷子"
+                    },
+                    {
+                        "title": "天菱阁酒楼（通惠门路店）",
+                        "subTitle": "缤纷美味12人餐",
+                        "url": "http://p1.meituan.net/deal/__47874014__8480546.jpg@736w_416h_1e_1c",
+                        "currentPrice": 123,
+                        "oldPrice": "门市价¥2038",
+                        "sold": "宽窄巷子"
+                    }
+                ]
+            }
+        ];
+        // data.forEach(function(element) {
+        //     element.remendList.forEach(function(remend) {
+        //         document.write(`INSERT INTO merchant (name, logo, short_address, detail_address, promotion_info, average_price, sell_price) VALUES ('${remend.title}', '${remend.url}', '${remend.sold}', '青羊区人民中路一段15号天府丽都喜来登饭店2层（近成都体育馆）', '${remend.subTitle}', '${remend.currentPrice}', 130); <br />`);
+        //     });
+        // })
+        data.forEach(function(element) {
+            document.write(`INSERT INTO merchant (name) VALUES ('${element.category}', '${remend.url}', '${remend.sold}', '青羊区人民中路一段15号天府丽都喜来登饭店2层（近成都体育馆）', '${remend.subTitle}', '${remend.currentPrice}', 130); <br />`);
+        })
+    </script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding:0;margin:0;}
+        #parent{
+            width:50%;
+            height:200px;
+            border:1px solid red;
+            margin:0 auto;
+        }
+
+
+        #imgBox{
+            width:500px;
+            height:200px;
+            position:relative;/*必须有===*/
+            overflow:hidden;/*必须有===*/
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        ul{
+            /*动画就是改变ul的left值的效果，所以一定要有定位*/
+            position:absolute;/*必须有*/
+            left:0;/*必须有*/
+
+        }
+        li{list-style: none;/*必须有*/
+            height:200px;/*必须有*/
+            width:500px;/*必须有*/
+            float:left;/*必须有*/
+        }
+        .span{
+            display:inline-block;
+            width:20px;
+            height:20px;
+            line-height:20px;
+            text-align: center;
+            border-radius:50%;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div id="imgBox">
+        <ul id='ul'>
+            <li style='background:red;'>第一个</li>
+            <li style='background:yellow;'>第二个</li>
+            <li style='background:pink;'>第三个</li>
+            <li style='background:green;'>第四个</li>
+            <li style='background:blue;'>第五个</li>
+            <li style='background:blue;'>第6个</li>
+            <li style='background:green;'>第7个</li>
+            <li style='background:blue;'>第8个</li>
+            <li style='background:green;'>第9个</li>
+            <li style='background:blue;'>第10个</li>
+        </ul>
+    </div>
+    <a href="#" id="prev">向左</a>
+    <a href="#" id="next">向右</a>
+    <!-- 放小圆点的盒子-->
+    <div id="arcBox">
+        <!-- 小圆点的位置 -->
+    </div>
+</div>
+<script>
+    var chefElement = {
+        bgColor1:'#cccccc',//小圆点的背景颜色
+        bgColor2:'red',//获得焦点的小圆点的背景颜色
+        animationSpeed:1, //每多少毫秒移动一次
+        minSpeed:5,//每次移动的距离
+        stopTime:5000, //动画停留的时间，毫秒为单位 包含移动所花费的时间
+
+        //获取页面元素
+        prev:document.getElementById('prev'),
+        next:document.getElementById('next'),
+        parent:document.getElementById('parent'),
+        ul:document.getElementById('ul'),
+        li:document.getElementById('ul').getElementsByTagName('li'),
+        arc:document.getElementById("arcBox"),
+        liWidth:document.getElementById('ul').getElementsByTagName('li')[0].offsetWidth,
+        type:true,
+        nextTimer:null,
+        prevTimer:null,
+        parent_n:null
+    };
+
+    //初始化小圆点/指定放图片的盒子 ul 的宽度
+    var elemSpan = (function(){
+        chefElement.ul.style.width = chefElement.liWidth*chefElement.li.length+'px';
+        for(var i = 0;i<chefElement.li.length;i++){
+            chefElement.li[i].index = i;
+            var span = document.createElement('span');
+                span.className = 'span';
+                span.index = i;
+                span.style.background = chefElement.bgColor1;
+                span.innerHTML = i+1;
+            chefElement.arc.appendChild(span);
+        }
+        var objSpan = chefElement.arc.getElementsByTagName('span');
+
+        //创建完以后第一个小圆点显示指定的颜色
+        objSpan[0].style.background = chefElement.bgColor2;
+        return objSpan;
+    })();
+
+    //给每个小圆点添加事件
+    chefElement.arc.onmouseover = function(ev){
+        var ev = ev || window.event;
+        var target = ev.target || ev.srcElement;
+        if(target.nodeName.toLowerCase() == "span"){
+            if(chefElement.type){
+                showImg(target.index);
+                changeBackgroundColor(target)
+                chefElement.type = true;
+            }
+        }
+    }
+
+    //改变小圆点的背景颜色
+    function changeBackgroundColor(obj){
+        for(var i = 0;i<elemSpan.length;i++){
+            elemSpan[i].style.background = chefElement.bgColor1;
+        }
+        elemSpan[obj.index].style.background = chefElement.bgColor2;
+    }
+
+    //根据参数显示对应的图片。
+    function showImg(inde){
+        var this_li = chefElement.li[0].index;
+
+        //把第一个元素放到最后面。
+        if(inde>this_li){
+            var x = inde-this_li;
+            for(var y = 0;y<x;y++){
+                chefElement.ul.appendChild(chefElement.li[0]);
+            }
+        }
+
+        //把最后一个元素放到第一的位置
+        if(inde<this_li){
+            var x_x = this_li-inde;
+            for(var g = 0;g<x_x;g++){
+                chefElement.ul.insertBefore(chefElement.li[chefElement.li.length-1],chefElement.li[0]);
+            }
+        }
+    }
+
+    chefElement.prev.onclick = function(){
+        if(chefElement.type){
+            clearInterval(chefElement.prevTimer);
+            chefElement.ul.insertBefore(chefElement.li[chefElement.li.length-1],chefElement.li[0]);
+            chefElement.liWidth = chefElement.li[0].offsetWidth;
+            chefElement.ul.style.left = '-'+chefElement.liWidth+'px';
+            chefElement.prevTimer = setInterval(pre,chefElement.animationSpeed);
+            chefElement.type = false;
+            changeBackgroundColor(chefElement.li[0]);
+        }
+    };
+    next.onclick = function(){
+        if(chefElement.type){
+            chefElement.liWidth = 0;
+            clearInterval(chefElement.nextTimer);
+            chefElement.nextTimer = setInterval(nex,chefElement.animationSpeed);
+            chefElement.type = false;
+            changeBackgroundColor(chefElement.li[1]);
+        }
+    };
+
+    //next动画函数
+    function nex(){
+        chefElement.ul.style.left = '-'+chefElement.liWidth+ 'px';
+        chefElement.liWidth += chefElement.minSpeed ;
+        if(chefElement.liWidth >= chefElement.li[0].offsetWidth){
+            clearInterval(chefElement.nextTimer);
+            chefElement.ul.appendChild(chefElement.li[0]);
+            chefElement.ul.style.left = 0;
+            chefElement.type = true;
+        }
+    }
+
+    //prev动画函数
+    function pre(){
+        chefElement.ul.style.left = '-'+chefElement.liWidth+'px';
+        chefElement.liWidth -= chefElement.minSpeed ;
+        if(chefElement.liWidth <= -1){
+            chefElement.ul.style.left = 0;
+            clearInterval(chefElement.prevTimer);
+            chefElement.type = true;
+        }
+    }
+
+    chefElement.parent.onmouseover = function(){
+        clearInterval(chefElement.parent_n);
+    };
+    chefElement.parent.onmouseout = function(){
+        chefElement.parent_n = setInterval(next.onclick,chefElement.stopTime);
+    };
+
+    //动画播放
+    chefElement.parent_n = setInterval(next.onclick,chefElement.stopTime);
+</script>
+</body>
+</html>
