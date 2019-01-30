@@ -25,7 +25,7 @@ app.all("*", function (req, res, next) {
         next();
 });
 
-// 注册
+// 注册接口
 app.post("/register", function (req, res) {
     var obj = req.body;
     if (!obj.mobile) {
@@ -71,7 +71,7 @@ app.post("/register", function (req, res) {
     });
 });
 
-// 登录
+// 登录接口
 app.post("/login", function (req, res) {
     var obj = req.body;
     if (!obj.mobile) {
@@ -110,7 +110,7 @@ app.post("/login", function (req, res) {
     });
 });
 
-// 有格调
+// 有格调数据请求接口
 app.get("/getQualities", function (req, res) {
     var connection = getDBcon();
     connection.query("SELECT * FROM category", function(err, categories) {
@@ -135,7 +135,7 @@ app.get("/getQualities", function (req, res) {
     });
 });
 
-// 很优惠
+// 很优惠数据请求接口
 app.get("/getCheaps", function (req, res) {
     res.send({
         "code": 200,
@@ -147,7 +147,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/msmerchant/3a59ef7140d5ad08f851d70809fa6f12157521.jpg@428w_240h_1e_1c",
                         "currentPrice": 26.9,
                         "oldPrice": "门市价¥70",
                         "sold": "已售9795"
@@ -155,7 +155,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/msmerchant/6b15169146ffab65ec60b92bdaa11ea4640562.jpg@428w_240h_1e_1c",
                         "currentPrice": 26.9,
                         "oldPrice": "门市价¥70",
                         "sold": "已售9795"
@@ -163,7 +163,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/deal/43ee659043a3ee158d4a25e46f80bf18102921.jpg@428w_240h_1e_1c",
                         "currentPrice": 26.9,
                         "oldPrice": "门市价¥70",
                         "sold": "已售9795"
@@ -171,7 +171,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/wedding/4fa4b5fc2f064dccee9947d14b256e26263121.jpg@428w_240h_1e_1c",
                         "currentPrice": 26.9,
                         "oldPrice": "门市价¥70",
                         "sold": "已售9795"
@@ -179,7 +179,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/wedding/1e0ed0f714aeef161ac4728f5854adbc567624.jpg@428w_240h_1e_1c",
                         "currentPrice": 26.9,
                         "oldPrice": "门市价¥70",
                         "sold": "已售9795"
@@ -187,7 +187,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/msmerchant/e62d1e62edea8e0f66c6750fb5a01ec7122093.jpg@428w_240h_1e_1c",
                         "currentPrice": 125,
                         "oldPrice": "门市价¥50",
                         "sold": "大业路"
@@ -195,7 +195,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "'上影国际影城(城中汇店)'自助午餐",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/deal/d1372eede7815ce19f24e56cb2796a89374018.jpg@428w_240h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥188",
                         "sold": "盐市口"
@@ -203,7 +203,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/mogu/cbbd292727e2f2968e5feeb9029284f858793.jpg@428w_240h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥18",
                         "sold": "盐市口"
@@ -211,7 +211,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/msmerchant/82aeed6744bb08a65a039729183678ee137611.jpg@428w_240h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥106",
                         "sold": "宽窄巷子"
@@ -219,7 +219,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p1.meituan.net/deal/201208/22/1_0822151022.jpg@426w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/wedding/bce5ed7c948a2c52fed943a91e415501318324.jpg@428w_240h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥2038",
                         "sold": "宽窄巷子"
@@ -232,7 +232,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/mogu/e082e4db3269c446257aeb3d2e50375e183195.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥442",
                         "sold": "温江大学城"
@@ -240,7 +240,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "上影国际影城(城中汇店)",
                         "subTitle": "上影国际影城(城中汇店)",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/mogu/271daf25967c6ba074563716872e65ac669737.jpg@736w_416h_1e_1c",
                         "currentPrice": 125,
                         "oldPrice": "门市价¥50",
                         "sold": "大业路"
@@ -248,7 +248,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "成都茂业JW万豪酒店·万豪中餐厅",
                         "subTitle": "'」港式点心任点任食'自助午餐",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/msmerchant/8399ae470bfcaac6a79612f410031366701818.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥188",
                         "sold": "盐市口"
@@ -256,7 +256,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "鹿野茶事（盐市口店）",
                         "subTitle": "小鹿初抹1份",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/msmerchant/7b4eb15c6f99490a9b2ab57cc86b39ec501649.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥18",
                         "sold": "盐市口"
@@ -264,7 +264,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "班花麻辣烫（奎星楼总店）",
                         "subTitle": "开学2人餐，提供免费WiFi",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/msmerchant/d068582d881861bf35bd4eb044aba76c829794.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥106",
                         "sold": "宽窄巷子"
@@ -272,7 +272,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "班花麻辣烫（奎星楼总店）",
                         "subTitle": "开学2人餐，提供免费WiFi",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/msmerchant/a361a5683dcfc8db85d61f15639f9bfd61437.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥106",
                         "sold": "宽窄巷子"
@@ -280,7 +280,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "班花麻辣烫（奎星楼总店）",
                         "subTitle": "开学2人餐，提供免费WiFi",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/deal/5f322204c8c700971cea2ced16842fc542012.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥106",
                         "sold": "宽窄巷子"
@@ -288,7 +288,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "班花麻辣烫（奎星楼总店）",
                         "subTitle": "开学2人餐，提供免费WiFi",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/msmerchant/1c448ca93f236d37fede7cc7029a19bd91074.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥106",
                         "sold": "宽窄巷子"
@@ -296,7 +296,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "班花麻辣烫（奎星楼总店）",
                         "subTitle": "开学2人餐，提供免费WiFi",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/msmerchant/1c131a9ae655062479a119abf5538d3c154240.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥106",
                         "sold": "宽窄巷子"
@@ -304,7 +304,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "天菱阁酒楼（通惠门路店）",
                         "subTitle": "缤纷美味12人餐",
-                        "url": "http://p0.meituan.net/merchantpic/9492b2a8b17c5dadbdf7b16078a2bbe0109901.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/msmerchant/1c131a9ae655062479a119abf5538d3c154240.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥2038",
                         "sold": "宽窄巷子"
@@ -317,7 +317,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "重庆地龙老火锅",
                         "subTitle": "升级豪华8人餐，有赠品",
-                        "url": "http://p0.meituan.net/wedding/91876ea27334715f461667d4db1aa07c201282.jpg@428w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/merchantpic/fb7d33ada85c90dc398afd43280305ad47850.jpg@240w_180h_1e_1c_1l|watermark=1&&r=2&p=9&x=2&y=2&relative=1&o=20|736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥442",
                         "sold": "温江大学城"
@@ -325,7 +325,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "重庆地龙老火锅",
                         "subTitle": "升级豪华8人餐，有赠品",
-                        "url": "http://p0.meituan.net/wedding/91876ea27334715f461667d4db1aa07c201282.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/merchantpic/027c797e1d73f89a2cd5342b08c2c3cd434110.jpg@240w_180h_1e_1c_1l|watermark=1&&r=2&p=9&x=2&y=2&relative=1&o=20|736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥442",
                         "sold": "温江大学城"
@@ -333,7 +333,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "重庆地龙老火锅",
                         "subTitle": "升级豪华8人餐，有赠品",
-                        "url": "http://p0.meituan.net/wedding/91876ea27334715f461667d4db1aa07c201282.jpg@428w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/wedding/3ca6d91a20026636c4ee8e3a1ce1fe2331027.jpg@240w_180h_1e_1c_1l|watermark=1&&r=2&p=9&x=2&y=2&relative=1&o=20|736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥442",
                         "sold": "温江大学城"
@@ -341,7 +341,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "重庆地龙老火锅",
                         "subTitle": "升级豪华8人餐，有赠品",
-                        "url": "http://p0.meituan.net/wedding/91876ea27334715f461667d4db1aa07c201282.jpg@428w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/merchantpic/fb7d33ada85c90dc398afd43280305ad47850.jpg@240w_180h_1e_1c_1l|watermark=1&&r=2&p=9&x=2&y=2&relative=1&o=20|736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥442",
                         "sold": "温江大学城"
@@ -349,7 +349,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "重庆地龙老火锅",
                         "subTitle": "升级豪华8人餐，有赠品",
-                        "url": "http://p0.meituan.net/wedding/91876ea27334715f461667d4db1aa07c201282.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/merchantpic/23361032b03b77963a0d909589e049f8202913.jpg@240w_180h_1e_1c_1l|watermark=1&&r=2&p=9&x=2&y=2&relative=1&o=20|736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥442",
                         "sold": "温江大学城"
@@ -365,7 +365,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "成都茂业JW万豪酒店·万豪中餐厅",
                         "subTitle": "'」港式点心任点任食'自助午餐",
-                        "url": "http://p0.meituan.net/wedding/91876ea27334715f461667d4db1aa07c201282.jpg@428w_240h_1e_1c",
+                        "url": "http:////p0.meituan.net/deal/f0275ba9fef14f4f44375c26635ef687191707.jpg@240w_180h_1e_1c_1l|watermark=1&&r=2&p=9&x=2&y=2&relative=1&o=20|736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥188",
                         "sold": "盐市口"
@@ -373,7 +373,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "鹿野茶事（盐市口店）",
                         "subTitle": "小鹿初抹1份",
-                        "url": "http://p0.meituan.net/wedding/91876ea27334715f461667d4db1aa07c201282.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/tdchotel/c22749c7fa949b34d6188d31313bb1a41216982.jpg@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥18",
                         "sold": "盐市口"
@@ -381,7 +381,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "班花麻辣烫（奎星楼总店）",
                         "subTitle": "开学2人餐，提供免费WiFi",
-                        "url": "http://p0.meituan.net/wedding/91876ea27334715f461667d4db1aa07c201282.jpg@428w_240h_1e_1c",
+                        "url": "http://p0.meituan.net/msmerchant/e1650c92c5d685c2254bd198b6eb82231094658.png@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥106",
                         "sold": "宽窄巷子"
@@ -389,7 +389,7 @@ app.get("/getCheaps", function (req, res) {
                     {
                         "title": "天菱阁酒楼（通惠门路店）",
                         "subTitle": "缤纷美味12人餐",
-                        "url": "http://p0.meituan.net/wedding/91876ea27334715f461667d4db1aa07c201282.jpg@428w_240h_1e_1c",
+                        "url": "http://p1.meituan.net/msmerchant/d5239cec31ab9f6a9a1ba827ee4142d41645764.png@736w_416h_1e_1c",
                         "currentPrice": 123,
                         "oldPrice": "门市价¥2038",
                         "sold": "宽窄巷子"
@@ -399,7 +399,7 @@ app.get("/getCheaps", function (req, res) {
     });
 });
 
-// 猫眼电影
+// 猫眼电影数据请求接口
 app.get("/getFilms", function (req, res) {
     res.send({
         "code": 200,
@@ -539,7 +539,7 @@ app.get("/getFilms", function (req, res) {
     });
 });
 
-// 推荐名宿
+// 推荐名宿数据请求接口
 app.get("/getMinsu", function (req, res) {
     res.send({
         "code": 200,
@@ -959,7 +959,7 @@ app.get("/getMinsu", function (req, res) {
     });
 });
 
-// 猜你喜欢
+// 猜你喜欢数据请求接口
 app.get("/getRecomends", function (req, res) {
     res.send({
         "code": 200,
@@ -1054,7 +1054,7 @@ app.get("/getRecomends", function (req, res) {
     });
 });
 
-// 餐馆详情
+// 餐馆详情数据请求接口
 app.get("/getMerchant", function (req, res) {
     var merchantId = req.query.id;
     if (!merchantId) {

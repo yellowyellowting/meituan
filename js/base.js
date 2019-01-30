@@ -46,6 +46,7 @@ function postRequest(url, data, fn) {
     xhr.send(data);
 }
 
+// 详情页跳转，获取地址栏的ID
 function getQueryString(name) { 
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
     var r = window.location.search.substr(1).match(reg); 

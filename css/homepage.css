@@ -1,0 +1,354 @@
+
+#main {
+    width: 100%;
+}
+#main .contents-wraper{
+    width: 11.9rem;
+    margin: auto;
+    margin-top: 0.45rem;
+}
+#main .contents-wraper .left{
+    width: 2.3rem;
+    height: 10rem;
+    float: left;
+}
+#main .contents-wraper .orders-link-box {
+    width: 2.3rem;
+    height: 6.3rem;
+    border: 0.01rem solid #e6e3e3;
+    border-radius: 0.04rem;
+     background: #ffffff;
+     box-sizing: border-box;
+     padding-left: 0.25rem;
+}
+#main .contents-wraper .linke-item ul{
+    list-style: none;
+}
+#main .contents-wraper .linke-item .link-title{
+    padding-top: 0.3rem;
+    color: #222;
+    font-weight: 500;
+}
+#main .contents-wraper .linke-item .title{
+    color: #222;
+    font-weight: 500;
+    padding-top: 0.1rem;
+}
+#main .contents-wraper .linke-item ul li {
+    width: 1.8rem;
+    padding-top: 0.15rem;
+}
+#main .contents-wraper .linke-item ul li a{
+    font-weight: 300;
+    font-size: 0.14rem;
+    color: #666;
+}
+#main .contents-wraper .linke-item ul li .iconfont{
+    font-weight: 300;
+    font-size: 0.12rem;
+    color: #666;
+    float: right;
+}
+#main .contents-wraper .linke-item .num{
+    color: #31BBAC;
+    font-size: 0.16rem;
+    font-weight: 400;
+    padding-left: 0.01rem;
+}
+#main .contents-wraper .left .QR-code{
+    width: 2.28rem;
+    height: 1.75rem;
+    border: 0.01rem solid  #e2e2e2;
+    text-align: center;
+    margin-top: 0.1rem;
+    border-radius: 0.04rem;
+    box-sizing: border-box;
+    padding: 0.15rem;
+    background-color: #ffffff;
+}
+#main .contents-wraper .left .QR-code img{
+    width: 0.95rem;
+    height: 0.95rem;
+    
+}
+#main .contents-wraper .left .QR-code .app-name{
+    font-weight: 500;
+}
+#main .contents-wraper .left .QR-code .red{
+    color: red;
+    font-size: 0.12rem;
+}
+#main .contents-wraper .left .QR-code .gary{
+    color: #3f3f3f;
+    font-size: 0.12rem;
+}
+#main .contents-wraper .userinfo-box{
+    width: 9.5rem;
+    float: right;
+    height: 14.7rem;
+}
+#main .contents-wraper .userinfo-box .user-info-box{
+    width: 9.5rem;
+    height: 3.19rem;
+    box-shadow: 0.001rem 0.01rem 0.1rem #cccccc;
+    border-radius: 0.04rem;
+    background-color: #ffffff;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info{
+    width: 9.5rem;
+    height: 2.09rem;
+    background-image: linear-gradient(-90deg,#16ABB7 3%,#13D1BE 98%);
+    box-sizing: border-box;
+    padding: 0.4rem 0 0 0.3rem;
+    position: relative;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .head-portrait{
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 0.1rem solid #8be1d8;
+    border-radius: 0.7rem;
+    float: left;
+    margin-right: 0.2rem;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .head-portrait img{
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 0.7rem;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .head-portrait .nickname{
+   float: left;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .nickname .nickname-text{
+  
+    margin-top: 0.3rem;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .nickname .nickname-text a{
+    font-size: 0.26rem;
+    color: #ffffff;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .nickname .nickname-text i{
+    color: #fdb758;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .nickname .user-balance{
+    color: #ffffff;
+    font-size: 0.14rem;
+    font-weight: 300;
+    padding: 0.05rem 0;
+    display: inline-block;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .nickname .user-balance a{
+    color: #ffffff;
+    font-size: 0.14rem;
+    font-weight: 300;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .user-setting{
+    font-size: 0.14rem;
+    color: #ffffff;
+    font-weight: 300;
+    position: absolute;
+    top: 50%;
+    right: 0.3rem;
+}
+#main .contents-wraper .userinfo-box .user-info-box .user-info .user-setting i{
+    font-size: 0.12rem;
+}
+#main .contents-wraper .userinfo-box .userfn-ls{
+    padding: 0.25rem 0;
+}
+#main .contents-wraper .userinfo-box .userfn-ls .userfn-ul{
+    width: 9.3rem;
+    margin: auto;
+    list-style: none;
+    float: left;
+    display: flex;
+    justify-content: space-around;
+}
+#main .contents-wraper .userinfo-box .userfn-ls .userfn-ul li{
+    float: left;
+    font-size: 0.14rem;
+    font-weight: 320;
+    
+}
+#main .contents-wraper .userinfo-box .userfn-ls .userfn-ul li .iconfont{
+    font-size: 0.36rem;
+    padding: 0.1rem;
+}
+#main .contents-wraper .userinfo-box .userfn-ls .userfn-ul li .icon-ding_dan{
+    color: #28c8bb;
+}
+#main .contents-wraper .userinfo-box .userfn-ls .userfn-ul li .icon-daifukuan{
+    color: #75bbfc;
+}
+#main .contents-wraper .userinfo-box .userfn-ls .userfn-ul li .icon-daishiyong{
+    color: #fc6072;
+}
+#main .contents-wraper .userinfo-box .userfn-ls .userfn-ul li .icon-daipinglun{
+    color: #fdbc42;
+}
+#main .contents-wraper .userinfo-box .userfn-ls .userfn-ul li .icon-tuikuan{
+    color: #7f8af8;
+}
+#main .contents-wraper .userinfo-box .recomend{
+    margin-top: 0.25rem;
+    border: 0.01rem solid #dddcdc;
+    border-radius: 0.04rem;
+    background-color: #ffffff;
+}
+#main .contents-wraper .userinfo-box .recomend .recomend-title{
+    font-size: 0.14rem;
+    color: #666;
+    padding: 0.2rem 0 0.1rem 0.2rem;
+}
+#main .contents-wraper .userinfo-box .recomend .recomend-title .title{
+    font-size: 0.2rem;
+    font-weight: 500;
+    color: #222;
+    padding-right: 0.1rem;
+}
+#main .contents-wraper .userinfo-box .recomend .recomend-ls{
+    list-style: none;
+    padding: 0.1rem 0.1rem 0.2rem 0.1rem;
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls>li {
+    width: 2.12rem;
+    height: 2.27rem;
+    padding: 0.1rem;
+    overflow: hidden;
+    float: left;
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls>li a img{
+    width: 2.12rem;
+    height: 1.18rem;
+    border-radius: 0.04rem;
+    
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls li a .shop-name{
+    font-size: 0.14rem;
+    color: #222;
+    width: 2.12rem;
+    overflow: hidden;
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls li a ul.score{
+    list-style: none;
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls li a ul.score>li .iconfont{ 
+    float: left;
+    font-size: 0.12rem;
+    color: #c3c3c3;
+    padding: 0.05rem 0.05rem 0 0;
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls li a .score-line span{
+    font-size: 0.12rem;
+    color: #c3c3c3;
+    padding: 0 0.1rem;
+    font-weight: 300;
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls li a .adress{
+    font-size: 0.12rem;
+    color: #c3c3c3;
+    font-weight: 300;
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls li a .price-symbol{
+    color: rgb(255, 102, 0);
+    font-size: 0.14rem;
+    
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls li a .price-number{
+    color: rgb(255, 102, 0);
+    font-size: 0.22rem;
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls li a .price-desc{
+    color: rgb(255, 102, 0);
+    font-size: 0.14rem;
+}
+#main .contents-wraper .userinfo-box .recomend ul.recomend-ls>li:hover{
+    border-radius: 0.04rem;
+    background-color: #f4f4f4f4;
+    transition: 0.2s;
+}
+
+#main .botton-nav-container {
+    height: 2rem;
+    border: 0.01rem solid #dfdddd;
+    border-radius: 0.04rem;
+}
+#main .scenes-container .nav-container .nav-index-nav-container {
+    background: linear-gradient(-90deg,#0ECAC7 0,#06C1AE 100%);
+    height: 0.44rem;
+    border-top-left-radius: 0.04rem;
+    border-top-right-radius: 0.04rem;
+}
+#main .scenes-container .nav-container .nav-index-nav-container ul{
+    list-style: none;
+    height: 0.44rem;
+    border-radius: 0.04rem;
+}
+#main .scenes-container .nav-container .nav-index-nav-container ul li{
+    line-height: 0.44rem;
+    color: #fff;
+    font-size: 0.18rem;
+    padding-left: 0.1rem;
+}
+#main .botton-nav-container .b-n-content{
+    width: 11.9rem;
+    height: 2.18rem;
+    margin: auto;
+    padding-top: 0.1rem;
+}
+#main .botton-nav-container .b-n-content .b-n-classification{
+    width: 11.9rem;
+    height: 0.73rem;
+}
+
+#main .botton-nav-container .b-n-content .b-n-classification .b-n-subtitle{
+    width: 1rem;
+    height: 0.73rem;
+    line-height: 0.73rem;
+    text-align: center;
+    float: left;
+    font-size: 0.14rem;
+}
+#main .botton-nav-container .b-n-content .b-n-classification .b-n-sublist {
+    width: 10.8rem;
+    height: 0.6rem;
+    padding: 0.12rem 0 0 0.1rem;
+    float: left;
+}
+#main .botton-nav-container .b-n-content .b-n-classification .b-n-sublist-bottom{
+  border-bottom: 0.01rem solid #e9e5e5;
+}
+#main .botton-nav-container .b-n-content .b-n-classification .b-n-sublist .b-n-list-item{
+   float: left;
+    width: 1rem;
+    height: 0.17rem;
+    margin-bottom: 0.13rem;
+    font-size: 0.12rem;
+    font-weight: 300;
+}
+#main .botton-nav-container .b-n-content .b-n-classification .b-n-sublist .b-n-list-item:hover{
+    color: #06C1AE;
+}
+
+#main .login-container .icon-box{
+    font-size: 0.12rem;
+    color: #78cfc5;
+    width: 100%;
+    padding: 0 0.2rem;
+}
+#main .login-container .icon-box div{
+float: left;
+padding: 0.1rem;
+
+}
+#main .login-container .icon-box div p{
+    color: black;
+}
+
+#main .login-container .head-img-row a.img-target{
+    display: inline-block;
+    width: 0.47rem;
+    height: 0.47rem;
+    border-radius: 0.3rem;
+    padding: 0.04rem;
+    background: #F60;
+}

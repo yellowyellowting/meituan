@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>电影选坐购票</title>
+    <link rel="stylesheet" href="../css/film.css">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_1019291_zpjasomwb0g.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="../images/data_image.png" />
+            </div>
+            <div class="city-container">
+                <span>成都</span>
+                <i class="iconfont icon-drop-down-arrow"></i>
+            </div>
+            <div class="nav">
+                <ul class="navbar">
+                    <li>
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">电影</a>
+                    </li>
+                    <li>
+                        <a href="#">影院</a>
+                    </li>
+                    <li>
+                        <a href="#">榜单</a>
+                    </li>
+                    <li>
+                        <a href="#">热点</a>
+                    </li>
+                    <li>
+                        <a href="#">商城</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="app-container">
+                <i class="iconfont icon-mobile-phone"></i>
+                <span>APP下载</span>
+                <i class="iconfont icon-drop-down-arrow"></i>
+            </div>
+            <div class="serch-box">
+                <input class="serch-ipt" type="text" placeholder="找影视剧、影人、影院" />
+                <div class="serch-icon">
+                    <i class="iconfont icon-serch"></i>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="https://img.meituan.net/avatar/e9b04d1435a7434a3dd8bed33b02cf636155.jpg" />
+                <i class="iconfont icon-drop-down-arrow"></i>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="content-wrapper">
+            <div class="process">
+                <div class="step the-first-step">
+                    <div class="line">
+                        <div class="circle">
+                            <div class="step-num">1</div>
+                        </div>
+                    </div>
+                    <div class="step-text">选择影片场次</div>
+                </div>
+                <div class="step">
+                    <div class="line">
+                        <div class="circle">
+                            <div class="step-num">2</div>
+                        </div>
+                    </div>
+                    <div class="step-text">选择座位</div>
+                </div>
+                <div class="step">
+                    <div class="line">
+                        <div class="circle">
+                            <div class="step-num">3</div>
+                        </div>
+                    </div>
+                    <div class="step-text">14分钟内付款</div>
+                </div>
+                <div class="step the-last-step">
+                    <div class="line">
+                        <div class="circle">
+                            <div class="step-num">4</div>
+                        </div>
+                    </div>
+                    <div class="step-text">影院取票观影</div>
+                </div>
+
+
+            </div>
+            <div class="movie-selection">
+                <div class="seat-example">
+                    <div class="seat-idents">
+                        <div class="seat-ident">
+                            <img src="../images/option.png" />
+                            <span class="seat-text">可选座位</span>
+                        </div>
+                        <div class="seat-ident">
+                            <img src="../images/sold.png" />
+                            <span class="seat-text">已售座位</span>
+                        </div>
+                        <div class="seat-ident">
+                            <img src="../images/selected.png" />
+                            <span class="seat-text">可选座位</span>
+                        </div>
+                        <div class="seat-ident">
+                            <img src="../images/couple.png" />
+                            <span class="seat-text">情侣座位</span>
+                        </div>
+
+                    </div>
+                    <div class="seating-area">
+                        <div class="screen">
+                            <img src="../images/bacground.jpg" />
+                            <p>银幕中央</p>
+                        </div>
+                        <div class="seats">
+                            <div class="column">
+                                <ul class="num">
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>0</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                </ul>
+                            </div>
+                            <div class="seats-wrapper">
+                                <div class="row right-shift">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row right-shift">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <ul>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                        <li>
+                                            <img src="../images/option.png" />
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="ticket-info">
+                    <div class="film-content">
+                        <div class="img-container">
+                            <img src="https://p0.meituan.net/movie/fa1ed3d0df3aa7e7107e1077ed686f087257146.jpg@115w_158h_1e_1c" />
+                        </div>
+
+                        <div class="film-info">
+                            <p class="name">死侍2：我爱我家</p>
+                            <div class="type">
+                                <span>类型 :</span>
+                                <span class="value">喜剧,动作,冒险</span>
+                            </div>
+                            <div class="time">
+                                <span>时长 :</span>
+                                <span class="value">119分钟</span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="sold-info">
+                            <div class="info cinema">
+                                <span>影院 :</span>
+                                <span class="value">保利国际影城(复城店)</span>
+                            </div>
+                            <div class="info movie-hall">
+                                <span>影厅 :</span>
+                                <span class="value">3号厅（SONY 4K）</span>
+                            </div>
+                            <div class="info version">
+                                <span>版本 :</span>
+                                <span class="value">英语2D</span>
+                            </div>
+                            <div class="info session">
+                                <span>场次 :</span>
+                                <span class="value">今天 1月30 19:10</span>
+                            </div>
+                            <div class="info ticket-price">
+                                <span>票价 :</span>
+                                <span class="value">￥41/张</span>
+                            </div>
+                        </div>
+                        <div class="dotted-line"></div>
+                        <div class="selected-info">
+                                <p class="prompt">座位：一次最多选5个座位</p>
+                                <div class="no-selected">
+                                    <span>请</span>
+                                    <span class="red">点击左侧</span>
+                                    <span>座位图选择座位</span>
+                                </div>
+                                <div>
+                                    <span>总价 :</span>
+                                    <span class="yuan">￥</span>
+                                    <span class="price">0</span>
+                                </div>
+                        </div>
+                        <div class="dotted-line"></div>
+                        <div class="confirm">
+                            <div  class="user-moblie">
+                                <span>手机号 :</span>
+                                <span class="numeber">12345678912</span>
+                            </div>
+                           <div class="confirm-btn">确认选座</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

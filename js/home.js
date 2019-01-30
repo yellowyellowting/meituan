@@ -447,7 +447,7 @@ function Slider(slider) {
                 <img src="${minsu.url}" />
             </div>
             <div class="poi-info">
-                <div class="title" title="${minsu.title}">${minsu.title}</div>
+                <div class="title " title="${minsu.title}">${minsu.title}</div>
                 <div class="sub-title" title="${minsu.subTitle}">${minsu.subTitle}</div>
                 <div class="price-info">
                 <div class="current-price-wrapper">
@@ -548,15 +548,85 @@ function Slider(slider) {
 
 (function () {
     var userEntry = document.querySelector(".user-entry");
+
     var userInfo = getCookie("userInfo") ? JSON.parse(getCookie("userInfo")) : null;
     if (userInfo) {
-        userEntry.innerHTML = `<a href="#" class="growth-entry">${userInfo.mobile}</a>
+        userEntry.innerHTML = `<a href="./login.html" class="growth-entry">mt${userInfo.mobile}</a>
         <a href="#" class="extra-entry">退出</a>`;
     } else {
         userEntry.innerHTML = `<a href="./login.html" class="growth-entry">立即登录</a>
         <a href="./register.html" class="extra-entry">注册</a>`;
     }
 })();
+
+
+(function () {
+    var userLogin = document.querySelector(".login-container");
+    var userInfo = getCookie("userInfo") ? JSON.parse(getCookie("userInfo")) : null;
+    if (userInfo) {
+        userLogin.innerHTML = ` <div class="head-img-row">
+        <a href="./login.html" clss="img-target">
+        <img src="../images/logintouxiang.jpg" />
+        </a>
+      
+    </div>
+    <p class="user-name" onclick="login()">${userInfo.mobile}</p>
+    <div class="icon-box">
+        <div>
+                <i class="iconfont icon-icon--copy"></i>
+                <p>我的订单</p>
+        </div>
+        <div>
+                <i class="iconfont icon-shoucang"></i>
+                <p>我的收藏</p>
+        </div>
+        <div>
+                <i class="iconfont icon-diyongquan001"></i>
+                <p>抵用券</p>
+        </div>
+        <div>
+                <i class="iconfont icon-yue"></i>
+                <p>余额</p>
+        </div>
+        <div>
+                <i class="iconfont icon-gengduo"></i>
+                <p>更多</p>
+        </div>
+    </div>`;
+    } else {
+        userLogin.innerHTML = ` <div class="head-img-row">
+        <img src="../images/avatar.jpg" />
+    </div>
+    <p class="user-name" onclick="login()">Hi！你好</p>
+    <a class="register" href="./register.html">注册</a>
+    <a class="login" href="./login.html">立即登录</a>`;
+    }
+})();
+
+
+// // 退出
+
+    var dropOut = document.querySelector(".extra-entry");
+    var userEntry = document.querySelector(".user-entry");
+
+    dropOut.onclick = function() {
+        if(dropOut.innerText == "退出") {
+            setCookie("userInfo", "", -1); 
+            userEntry.innerHTML = `<a href="./login.html" class="growth-entry">立即登录</a>
+            <a href="./register.html" class="extra-entry">注册</a>`;
+            var userLogin = document.querySelector(".login-container");
+            userLogin.innerHTML = ` <div class="head-img-row">
+            <img src="../images/avatar.jpg" />
+        </div>
+        <p class="user-name" onclick="login()">Hi！你好</p>
+        <a class="register" href="./register.html">注册</a>
+        <a class="login" href="./login.html">立即登录</a>`;
+        }else{
+            location.assign("./register.html");
+        }
+        }
+
+    
 
 
 
@@ -579,11 +649,11 @@ selectCard(maoyanContainer);
 selectCard(minsuContainer);
 
 
-var login = document.querySelector(".growth-entry");
-login.onclick = function () {
-    location.assign("./login.html");
-}
-var registery = document.querySelector(".extra-entry");
-registery.onclick = function () {
-    location.assign("./register.html");
-}
+// var login = document.querySelector(".growth-entry");
+// login.onclick = function () {
+//     location.assign("./login.html");
+// }
+// var registery = document.querySelector(".extra-entry");
+// registery.onclick = function () {
+//     location.assign("./register.html");
+// }

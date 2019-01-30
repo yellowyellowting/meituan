@@ -63,7 +63,7 @@ function dologin(mobile, password) {
             console.info(result);
             if (result.code == 200) {
                 setCookie("userInfo", JSON.stringify(result.data));//成功便设置cookie
-                alert("登录成功")
+                alert("登录成功");
                 location.assign("./home.html");
             } else {
                 showErrorTip(result.message)
