@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=3.0,minimum-scale=0.3,user-scalable=1,initial-scale=0.5"/>
+ 
+	<title>JQ选座Demo</title>
+	
+	<style>  
+        html {  
+        margin:0px;  
+        padding:0px;  
+        }  
+        body {  
+        padding:0px;  
+        margin: 0px;  
+        width: 750px;  
+        }  
+        ul {  
+        padding:0px;  
+        list-style: none;/*去掉ul样式*/  
+        }  
+        ul li {  
+        float:left;/*使li水平平铺*/  
+        }
+ 
+        /*为奇数的li*/  
+        ul li:nth-child(odd) {
+        } 
+        /*椅子的样式*/  
+        ul[name = "chair"] li img {  
+        height: 16px;/*位置宽高*/  
+        width: 16px;  
+        }  
+        /*每行第一个椅子*/  
+        ul[name = "chair"] li:first-child img {  
+        margin-left:20px;  
+        }  
+        /*奇数椅子*/  
+        ul[name = "chair"] li:nth-child(2n+3) img {  
+        margin-left:30px;/*异桌椅子之间的距离*/  
+        }  
+        /*偶数椅子*/  
+        ul[name = "chair"] li:nth-child(even) img {  
+        margin-left:10px;/*同桌椅子之间的距离*/  
+        }  
+    </style>
+</head>
+ 
+<body>
+	<!--30行20列-->  
+    <div id="seats"></div> 
+</body>
+ 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	//$(ul).width = window.screen.width;  
+ 
+    //定义座位二维数组  
+    //0表示这个位置没有座位  
+    //1可选表示空位  
+    //2表示被别人占位  
+    //3表示自己选中的座位  
+    var seatArray = new Array();  
+    for(var i=0;i<30;i++){//一维数组长度为30  
+        seatArray[i]=new Array();  
+        for(var j=0;j<20;j++){//第二维长度为20  
+            seatArray[i][j]=1;
+        }
+    }  
+    //设置空位  
+    seatArray[1][5]=0;  
+    //设置被人占得位置  
+    seatArray[12][13]=2;
+ 
+    //添加30行li  
+    for(var v=0;v<30;v++){  
+        $('#seats').append(
+            '<ul name = "chair">'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+                '<li><img src="image/seat/seat_sale.png"/></li>'+  
+            '</ul>'+'<br/>')
+    }
+ 
+    //初始化特殊位置：没有座位的，被占的  
+    for(var i=0;i<30;i++){
+        for(var j=0;j<20;j++){
+        //没有座位
+        if(seatArray[i][j]==0)  
+            $('#seats >ul[name = "chair"]').eq(1).children().eq(j).replaceWith('<li><img src="image/seat/seat_empty.png"/></li>');  
+        //已经被别人占  
+        if(seatArray[i][j]==2)  
+            $('#seats >ul[name = "chair"]').eq(i).children().eq(j).replaceWith('<li><img src="image/seat/seat_sold.png"/></li>')  
+        }
+    }
+ 
+    //行号：parseInt($(this).parent().index()/2)  
+    //列号：$(this).index()
+    $("ul[name = 'chair'] li").click(function(){  
+    var row = parseInt($(this).parent().index()/2);  
+    var col = $(this).index();
+    //报行列号  
+    alert('第'+row+'行  第'+col+'列');
+    // 如果可选则更新状态
+    if (seatArray[row][col] == 1) {
+        $(this).replaceWith('<li><img src="image/seat/seat_selected.png"/></li>');//更换图片  
+       seatArray[row][col] = 3;//更新自己选定的数组位置状态 
+    }else{
+        alert("作为已被占或不存在该座位！");
+    }
+        
+     }); 
+</script>
+ 
+</html>
