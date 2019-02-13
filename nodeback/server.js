@@ -6,6 +6,10 @@ app.listen(8081, function () {
     console.log("服务器构建完成，访问地址为 http://127.0.0.1:8081");
 });
 
+app.on("uncaughtException", function(e) {
+    console.log(e);
+});
+
 //使用bodyParser模块，接收post参数
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ entend: false }));
@@ -116,22 +120,30 @@ app.get("/getQualities", function (req, res) {
     connection.query("SELECT * FROM category", function(err, categories) {
         var counter = 0;
         var data = [];
-        categories.forEach(function(category) {
-            connection.query("SELECT * FROM merchant WHERE category_id=?", category.id, function(err, merchants) {
-                data.push({
-                    "category": category.name,
-                    "remendList": merchants
-                });
-                counter++;
-                if (counter == categories.length) {
-                    res.send({
-                        "code": 200,
-                        "message": "查询成功",
-                        "data": data
+        if (categories) {
+            categories.forEach(function(category) {
+                connection.query("SELECT * FROM merchant WHERE category_id=?", category.id, function(err, merchants) {
+                    data.push({
+                        "category": category.name,
+                        "remendList": merchants
                     });
-                }
+                    counter++;
+                    if (counter == categories.length) {
+                        res.send({
+                            "code": 200,
+                            "message": "查询成功",
+                            "data": data
+                        });
+                    }
+                });
             });
-        });
+        } else {
+            res.send({
+                "code": 200,
+                "message": "查询成功",
+                "data": []
+            });
+        }
     });
 });
 
@@ -401,141 +413,18 @@ app.get("/getCheaps", function (req, res) {
 
 // 猫眼电影数据请求接口
 app.get("/getFilms", function (req, res) {
-    res.send({
-        "code": 200,
-        "message": "查询成功",
-        "data": [
-            {
-                "category": "正在热映",
-                "remendList": [
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p1.meituan.net/movie/426f1f3f1b145f763b75a60c7c39c44a535093.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-
-                    },
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p0.meituan.net/movie/c042fa48d4c53545a9b8a404dde760a13846552.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p1.meituan.net/movie/70147090b78af5ab17c04c60889d42fe729655.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p0.meituan.net/movie/6a21e35ad7106c60967954b165c09b92915222.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p0.meituan.net/movie/fa1ed3d0df3aa7e7107e1077ed686f087257146.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p1.meituan.net/movie/90fe8067e17b49379d312e46703d1c116750157.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p1.meituan.net/movie/093d9f90022cc283189288535d4cdc353508848.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p0.meituan.net/movie/ec30a55b1b20e7b8621bfb7682b530f9568248.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p0.meituan.net/movie/ef7389637312b976068823d476863e10117810.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "大黄蜂",
-                        "url": "http://p0.meituan.net/movie/4977daebfc404e90a2bdaf17911a88cc2332544.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    }
-                ]
-            },
-            {
-                "category": "即将上映",
-                "remendList": [
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p1.meituan.net/movie/bd1d36946e7653da76e9e7d0c34d5fbe292918.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p1.meituan.net/movie/bd1d36946e7653da76e9e7d0c34d5fbe292918.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p0.meituan.net/movie/fa1ed3d0df3aa7e7107e1077ed686f087257146.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p1.meituan.net/movie/fe5657acdb969f41335ea6efdc8005a32361470.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p1.meituan.net/movie/125f566cd9f0bad5a3f71e462d778e5c1030834.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p1.meituan.net/movie/125f566cd9f0bad5a3f71e462d778e5c1030834.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p1.meituan.net/movie/2f1c7af0aa32fb64b378f4c59e3dfcc3464610.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p0.meituan.net/movie/881e1bd9d927b10517be4c27a20b08a3262711.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p1.meituan.net/movie/eddda80298c8d14c8883b6eed54f8cb6458404.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    },
-                    {
-                        "title": "麻辣班花",
-                        "url": "http://p1.meituan.net/movie/4a7b8c6660775dc854853f09fd9e4a521025070.jpg@428w_594h_1e_1c",
-                        "subUrl": "http://s0.meituan.net/bs/fe-web-meituan/25e6614/img/imax3d.png",
-                        "score": 9.1,
-                    }
-                ]
-            }]
+    var connection = getDBcon();
+    connection.query("SELECT * FROM filminfo WHERE release_status=0 LIMIT 10", function(err, commingFilms) { 
+        connection.query("SELECT * FROM filminfo WHERE release_status=1 LIMIT 10", function(err, hotFilms) { 
+            res.send({
+                "code": 200,
+                "message": "查询成功",
+                "data": {
+                    hot: hotFilms,
+                    coming: commingFilms
+                }
+            });
+        });
     });
 });
 
@@ -1082,6 +971,40 @@ app.get("/getMerchant", function (req, res) {
             res.send({
                 "code": 500,
                 "message": "未找到该餐馆信息",
+            });
+        }
+    });
+});
+
+
+// 电影详情数据请求接口
+app.get("/getFilm", function (req, res) {
+    var filmId = req.query.id;
+    if (!filmId) {
+        res.send({
+            "code": 300,
+            "message": "电影ID不能为空"
+        });
+        return;
+    }
+
+    var connection = getDBcon();
+    connection.query("SELECT * FROM filminfo WHERE id=?", filmId, function(err, result) {
+        if (err) {
+            res.send(err);
+            connection.end();
+            return;
+        }
+        if (result.length > 0) {
+            res.send({
+                "code": 200,
+                "message": "查询成功",
+                "data": result[0]
+            });
+        } else {
+            res.send({
+                "code": 500,
+                "message": "未找到该电影信息",
             });
         }
     });

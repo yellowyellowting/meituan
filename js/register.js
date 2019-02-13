@@ -34,8 +34,6 @@ tell.onfocus = function () {
 
 tell.onblur = checkMobile;
 
-
-
 // 密码验证
 var password = document.getElementsByName("password")[0];
 var passwordTip = document.getElementsByClassName("passwordTip")[0];
@@ -71,7 +69,6 @@ password.onfocus = function () {
 }
 
 // 再次确认密码
-
 var repassword = document.getElementsByName("repassword")[0];
 var repasswordTip = document.getElementsByClassName("repasswordTip")[0];
 var repasswordRemend = document.getElementsByClassName("repasswordRemend")[0];
@@ -106,7 +103,6 @@ repassword.onfocus = function () {
     repasswordTip.innerText = "";
 }
 
-
 var verifycode = document.getElementsByName("verifycode")[0];
 var verifycodeTip = document.getElementsByClassName("verifycodeTip")[0];
 var codeRemend = document.getElementsByClassName("codeRemend")[0];
@@ -140,12 +136,6 @@ verifycode.onfocus = function () {
     verifycodeTip.innerText = "";
 }
 
-// var ipts = document.querySelectorAll("input");
-// var form = document.querySelector("form");
-
-// var tellValues = document.getElementsByName("tell")[0];
-// var password = document.getElementsByName("password")[0];
-
 function wantToRegister() {
     var correct = true;
     if (!checkMobile()) {
@@ -167,22 +157,14 @@ function wantToRegister() {
 
 // AJAX数据传参
 function doRegister(mobile, password) {
-    var xhr = new XMLHttpRequest();
-
-    xhr.open("post", "http://127.0.0.1:8081/register");
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");//必须加这行代码
-    xhr.send("mobile=" + mobile + "&password=" + password);
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var result = JSON.parse(xhr.responseText);
-            console.info(result);
-            alert(result.message);
-            if (result.code == 200) {
-                location.assign("./login.html");//location跳转实现
-            }
+    postRequest("register", "mobile=" + mobile + "&password=" + password, function(json) {
+        var result = JSON.parse(json);
+        console.info(result);
+        alert(result.message);
+        if (result.code == 200) {
+            location.assign("./login.html");//location跳转实现
         }
-    }
+    });
 }
 
 var regiterBtn = document.querySelector(".agreeRgiste");

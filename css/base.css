@@ -22,18 +22,16 @@ a {
 
 #header {
     width: 100%;
-    height: 0.4rem;
     color: rgb(153, 153, 153);
     font-size: 0.12rem;
     min-width: 11.9rem;
-    background-color: rgb(248, 248, 248);
     font-weight: 350;
+    background-color: #ffffff;
 }
 
 #header .header-wrap {
-    width: 12.8rem;
-    margin: 0 0.45rem;
     height: 0.4rem;
+    background-color: rgb(248, 248, 248);
 }
 
 #header .header-bar-position {
@@ -51,28 +49,20 @@ a {
     padding: 0 0.01rem;
 }
 
-.header-wrap .near-citys {
+#header .header-wrap .near-citys {
     color: rgb(153, 153, 153);
     margin: 0 0.04rem;
     font-weight: 300;
 }
 
 #header .user-entry .growth-entry {
-    display: inline-block;
-    width: 0.5rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin: 0 0.1rem;
     color: rgb(49, 187, 172);
     cursor: pointer;
 }
-#header .user-entry .extra-entry{
-    color: rgb(153, 153, 153);
-}
+
 #header .user-entry .extra-entry:hover {
     color: rgb(49, 187, 172);
- 
 }
 
 #header .header-bar-nav {
@@ -165,12 +155,6 @@ a {
     display: none;
 }
 
-/* #header .header-bar-nav .header-nav-first > .has-child:nth-child(4):hover {
-    background: rgb(255, 255, 255);
-    border-radius: 0.02rem;
-    box-shadow: 0.001rem 0.001rem 0.05rem #cccccc;
-} */
-
 #header .header-bar-nav .header-nav-first>.has-child:nth-child(4):hover .header-nav-second {
     display: block;
 }
@@ -192,21 +176,18 @@ a {
 #header .header-content-wrap {
     background: #ffffff;
     box-shadow: 0.001rem 0.01rem 0.05rem #cccccc;
-    padding: 0 0.45rem;
-    width: 100%;
-    height: 1.22rem;
-    padding-bottom: 0.35rem;
 }
-#header .header-content-wrap .header-content {
-    width: 12.8rem;
+
+#header .header-content {
+    width: 11.9rem;
     margin: auto;
 }
+
 #header .header-content-wrap .header-content .header-title-module {
     width: 2.20rem;
     height: 0.54rem;
     padding: 0.28rem 0.6rem 0.4rem 0;
-    float: left;
-  
+    float: left; 
 }
 
 #header .header-content-wrap .header-content .header-title-module .header-title img {
@@ -309,21 +290,15 @@ a {
     color: rgb(19, 209, 190);
 }
 
-
-
-
 #com-footer{
-    width: 12.8rem;
+    width: 11.9rem;
     height: 6.35rem;
     margin: auto;
     margin-top: 0.4rem;
-    
-    
 }
 #com-footer .footer-content{
     width: 11.9rem;
     height: 6.35rem;
-    
 }
 #com-footer .footer-link {
     width: 11rem;
@@ -351,7 +326,7 @@ a {
 #com-footer .footer-link .footlist li a{
     color: #999;
     font-weight: 300;
-    font-size: 0.12rem;
+    font-size: 0.14rem;
 }
 #com-footer .footer-link .footlist li a:hover{
     color: #06C1AE;
@@ -363,9 +338,10 @@ a {
     width: 11.7rem;
     height: 0.76rem;
     padding: 0.15rem 02rem 0.3rem 0;
+    box-sizing: border-box;
 }
 #com-footer .footer-content .footer-copyright .footer-copyright-left{
-    width: 4.4rem;
+    width: 4.21rem;
     height: 0.76rem;
     float: left;
     padding-left: 0.3rem;

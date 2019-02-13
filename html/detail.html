@@ -5,143 +5,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>嘎嘎鸭脑壳</title>
+    <title>详情页</title>
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/detail.css">
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1019291_jznyz1wyxw.css">
 </head>
 
 <body>
+    <!-- 头部导航（顶部导航和搜索框） -->
     <header id="header">
         <!-- 顶部导航 -->
         <div class="header-wrap">
-            <div class="header-bar-position">
-                <i class="iconfont icon-local-icon"></i>
+            <div class="header-content">
+                <div class="header-bar-position">
+                    <i class="iconfont icon-local-icon"></i>
 
-                <span class="current-city">成都</span>
-                <a class="change-city">切换城市</a>
+                    <span class="current-city">成都</span>
+                    <a class="change-city">切换城市</a>
 
-                <div class="near-citys">
-                    [
-                    <a class="city-guess">新津县</a>
-                    <a class="city-guess">崇州</a>
-                    <a class="city-guess">彭州</a>
-                    ]
+                    <div class="near-citys">
+                        [
+                        <a class="city-guess">新津县</a>
+                        <a class="city-guess">崇州</a>
+                        <a class="city-guess">彭州</a>
+                        ]
+                    </div>
+                    <div class="user-entry">
+                        <a href="#" class="growth-entry">立即登录</a>
+                        <a href="#" class="extra-entry">注册</a>
+                    </div>
                 </div>
-                <div class="user-entry">
-                    <a href="./login.html" class="growth-entry">立即登录</a>
-                    <a href="./register.html" class="extra-entry">注册</a>
+                <div class="header-bar-nav">
+                    <ul class="header-nav-first">
+                        <li class="has-child">
+                            <a href="#">我的美团</a>
+
+                            <ul class="header-nav-my header-nav-second">
+                                <li>
+                                    <a href="#">我的美团</a>
+                                </li>
+                                <li>
+                                    <a href="#">我的订单</a>
+                                </li>
+                                <li>
+                                    <a href="#">我的收藏</a>
+                                </li>
+                                <li>
+                                    <a href="#">抵用券</a>
+                                </li>
+                                <li>
+                                    <a href="#">账户设置</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="has-child">
+                            <a href="#">手机APP</a>
+                        </li>
+                        <li class="has-child">
+                            <a href="#">商家中心</a>
+
+                            <ul class="header-nav-merchant header-nav-second">
+                                <li>
+                                    <a href="#">登录商家中心</a>
+                                </li>
+                                <li>
+                                    <a href="#">美团智能收银</a>
+                                </li>
+                                <li>
+                                    <a href="#">我想合作</a>
+                                </li>
+                                <li>
+                                    <a href="#">手机免费开店</a>
+                                </li>
+                                <li>
+                                    <a href="#">餐饮代理商招募</a>
+                                </li>
+                                <li>
+                                    <a href="#">商家申请开票</a>
+                                </li>
+                                <li>
+                                    <a href="#">免费合作美团团队</a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="has-child">
+                            <a href="#">网站导航</a>
+                            <div class="header-nav-site header-nav-second">
+                                <dl class="header-jiulv header-nav-third">
+                                    <dt>酒店旅游</dt>
+                                    <dd>
+                                        <a href="#">国际机票</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">火车票</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">榛果民宿</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">经济型酒店</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">主题酒店</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">商务酒店</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">公寓</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">豪华酒店</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">客栈</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">青年旅社</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">度假酒店</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">别墅</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="#">农家院</a>
+                                    </dd>
+
+                                </dl>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <div class="header-bar-nav">
-                <ul class="header-nav-first">
-                    <li class="has-child">
-                        <a href="#">我的美团</a>
-
-                        <ul class="header-nav-my header-nav-second">
-                            <li>
-                                <a href="#">我的美团</a>
-                            </li>
-                            <li>
-                                <a href="#">我的订单</a>
-                            </li>
-                            <li>
-                                <a href="#">我的收藏</a>
-                            </li>
-                            <li>
-                                <a href="#">抵用券</a>
-                            </li>
-                            <li>
-                                <a href="#">账户设置</a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <li class="has-child">
-                        <a href="#">手机APP</a>
-                    </li>
-                    <li class="has-child">
-                        <a href="#">商家中心</a>
-
-                        <ul class="header-nav-merchant header-nav-second">
-                            <li>
-                                <a href="#">登录商家中心</a>
-                            </li>
-                            <li>
-                                <a href="#">美团智能收银</a>
-                            </li>
-                            <li>
-                                <a href="#">我想合作</a>
-                            </li>
-                            <li>
-                                <a href="#">手机免费开店</a>
-                            </li>
-                            <li>
-                                <a href="#">餐饮代理商招募</a>
-                            </li>
-                            <li>
-                                <a href="#">商家申请开票</a>
-                            </li>
-                            <li>
-                                <a href="#">免费合作美团团队</a>
-                            </li>
-                        </ul>
-
-                    </li>
-                    <li class="has-child">
-                        <a href="#">网站导航</a>
-                        <div class="header-nav-site header-nav-second">
-                            <dl class="header-jiulv header-nav-third">
-                                <dt>酒店旅游</dt>
-                                <dd>
-                                    <a href="#">国际机票</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">火车票</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">榛果民宿</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">经济型酒店</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">主题酒店</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">商务酒店</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">公寓</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">豪华酒店</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">客栈</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">青年旅社</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">度假酒店</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">别墅</a>
-                                </dd>
-                                <dd>
-                                    <a href="#">农家院</a>
-                                </dd>
-
-                            </dl>
-                        </div>
-                    </li>
-                </ul>
+                <div class="clear"></div>
             </div>
         </div>
         <!-- 搜索框 -->
         <div class="header-content-wrap">
-            <div class="header-content clearfix">
+            <div class="header-content">
                 <div class="header-title-module">
                     <div class="header-title">
                         <a href="#">
@@ -176,10 +180,9 @@
                         <a href="#">成都失恋博物馆</a>
                     </div>
                 </div>
+                <div class="clear"></div>
             </div>
-
         </div>
-
     </header>
     <div class="clear"></div>
     <main id="mian">
@@ -944,6 +947,7 @@
 
                 </div>
     </main>
+    <div class="clear"></div>
     <footer id="com-footer">
         <div class="footer-content">
             <div class="footer-link ">
@@ -951,123 +955,78 @@
                     <p class="title">用户帮助</p>
                     <ul class="footlist">
                         <li><a href="#">申请退款</a></li>
+                        <li><a href="#">查看美团券密码</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">反诈骗公告</a></li>
                         <li><a href="#">申请退款</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">反诈骗公告</a></li>
                         <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
+                    </ul>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <p class="title">用户帮助</p>
+                    <p class="title">美团服务</p>
                     <ul class="footlist">
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
+                        <li><a href="#">美团外卖</a></li>
+                        <li><a href="#">美团酒店</a></li>
+                        <li><a href="#">猫眼电影</a></li>
+                        <li><a href="#">美团配送</a></li>
+                        <li><a href="#">美团云</a></li>
+                        <li><a href="#">大众点评</a></li>
+                        <li><a href="#">榛果民宿</a></li>
+                        <li><a href="#">无人配送</a></li>
+                        <li><a href="#">大众点评</a></li>
+                        <li><a href="#">榛果民宿</a></li>
+                        <li><a href="#">无人配送</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <p class="title">用户帮助</p>
+                    <p class="title">商家合作</p>
                     <ul class="footlist">
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
+                        <li><a href="#">美食商家入驻(非外卖)</a></li>
+                        <li><a href="#">美团外卖开店申请</a></li>
+                        <li><a href="#">美团收银官网</a></li>
+                        <li><a href="#">外卖配送加盟申请</a></li>
+                        <li><a href="#">美团点评餐饮学院</a></li>
+                        <li><a href="#">酒店商家入驻</a></li>
+                        <li><a href="#">境内度假商家入驻</a></li>
+                        <li><a href="#">综合商家入驻</a></li>
+                        <li><a href="#">美团收银官网</a></li>
+                        <li><a href="#">外卖配送加盟申请</a></li>
+                        <li><a href="#">美团点评餐饮学院</a></li>
+                        <li><a href="#">酒店商家入驻</a></li>
+                        <li><a href="#">境内度假商家入驻</a></li>
+                        <li><a href="#">综合商家入驻</a></li>
+                       
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <p class="title">用户帮助</p>
+                    <p class="title">代理商加盟</p>
                     <ul class="footlist">
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
+                        <li><a href="#">智能支付渠道加盟商招募</a></li>
+                        <li><a href="#">到店餐饮代理商招募</a></li>
+                        <li><a href="#">非餐饮代理商招募</a></li>
+                        <li><a href="#">美团联盟</a></li>
+                        <li><a href="#">美团收银招募线上分销商</a></li>
+                        <li><a href="#">美团点评5S服务商招募</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <p class="title">用户帮助</p>
+                    <p class="title">消费者服务热线</p>
                     <ul class="footlist">
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
+                        <li><a href="#">外卖消费者：10109777</a></li>
+                        <li><a href="#">猫眼消费者：10105335</a></li>
+                        <li><a href="#">其他消费者：10107888</a></li>
+                        <li><a href="#">商家服务热线</a></li>
+                        <li><a href="#">外卖&餐饮商家：10105557</a></li>
+                        <li><a href="#">休闲娱乐、丽人、ktv、教育、结婚、亲子、家装等商家：10100107</a></li>
+                        <li><a href="#">违法和不良信息举报电话：4006018900</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <p class="title">用户帮助</p>
-                    <ul class="footlist">
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <p class="title">用户帮助</p>
-                    <ul class="footlist">
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-column">
-                    <p class="title">用户帮助</p>
-                    <ul class="footlist">
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <p class="title">用户帮助</p>
-                    <ul class="footlist">
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <p class="title">用户帮助</p>
-                    <ul class="footlist">
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                        <li><a href="#">申请退款</a></li>
-                    </ul>
-                </div>
+                
             </div>
             <div class="footer-copyright">
                 <div class="footer-copyright-left">
@@ -1077,19 +1036,17 @@
                         <span>京ICP备10211739号</span>
                     </div>
                     <div class="left-item">
-                        <span>©美团网团购 meituan.com</span>
-                        <span>京ICP证070791号</span>
-                        <span>京ICP备10211739号</span>
+                        <span>广播电视节目制作经营许可证（京）字第03889号</span>
+                     
                     </div>
                     <div class="left-item">
-                        <span>©美团网团购 meituan.com</span>
-                        <span>京ICP证070791号</span>
-                        <span>京ICP备10211739号</span>
+                        <span>食品经营许可证</span>
+                        <span>互联网药品信息服务资格证</span>
+                 
                     </div>
                     <div class="left-item">
-                        <span>©美团网团购 meituan.com</span>
-                        <span>京ICP证070791号</span>
-                        <span>京ICP备10211739号</span>
+                        <span>医疗器械网络交易服务第三方平台备案：（京）网械平台备字[2018]第00004号</span>
+                      
                     </div>
                 </div>
                 <div class="footer-copyright-right">
@@ -1097,12 +1054,8 @@
                     <a href="#"> <img src="../images/footer.png" /></a>
                     <a href="#"> <img src="../images/footer (1).png" /></a>
                     <a href="#"> <img src="../images/footer (2).png" /></a>
-
-
-
                 </div>
             </div>
-
         </div>
     </footer>
     <script src="../js/base.js"></script>

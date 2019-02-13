@@ -51,25 +51,18 @@ function wantToLogin() {
 
 // AJAX数据传参
 function dologin(mobile, password) {
-    var xhr = new XMLHttpRequest();
-
-    xhr.open("post", "http://127.0.0.1:8081/login");
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");//必须加这行代码
-    xhr.send("mobile=" + mobile + "&password=" + password);
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var result = JSON.parse(xhr.responseText);
-            console.info(result);
-            if (result.code == 200) {
-                setCookie("userInfo", JSON.stringify(result.data));//成功便设置cookie
-                alert("登录成功");
-                location.assign("./home.html");
-            } else {
-                showErrorTip(result.message)
-            }
+    postRequest("login", "mobile=" + mobile + "&password=" + password, function(json) {
+        var result = JSON.parse(json);
+        console.info(result);
+        if (result.code == 200) {
+            setCookie("userInfo", JSON.stringify(result.data));//成功便设置cookie
+            alert("登录成功");
+            // location.assign("./home.html");
+            history.back();
+        } else {
+            showErrorTip(result.message)
         }
-    }
+    });
 }
 
 

@@ -78,35 +78,33 @@ var preferentialContainer = document.querySelectorAll(".preferential .preferenti
         for(let i = 0; i < 6; i++) {
             var preferentialContents = 
             `
-            <div class="content">
-            <img src="${merchant.logo}" />
-            <div class="dishe-info">
-                <p class="title">T${merchant.name}份</p>
-                <img src="../images/tuangou.png" />
+                <div class="content">
+                <img src="${merchant.logo}" />
+                <div class="dishe-info">
+                    <p class="title">T${merchant.name}份</p>
+                    <img src="../images/tuangou.png" />
+                    <div class="clear"></div>
+                    <div class="count">
+                        <span>已售</span>
+                        <span>340</span>
+                    </div>
+                    <div class="price-info">
+                        <span>￥</span>
+                        <span class="price">${merchant.sell_price}</span>
+                        <span class="store-price">${merchant.average_price}</span>
+                    </div>
+                    <a href="#" class="buy">立即抢购</a>
+                </div>
+
                 <div class="clear"></div>
-                <div class="count">
-                    <span>已售</span>
-                    <span>340</span>
-                </div>
-                <div class="price-info">
-                    <span>￥</span>
-                    <span class="price">${merchant.sell_price}</span>
-                    <span class="store-price">${merchant.average_price}</span>
-                </div>
-                <a href="#" class="buy">立即抢购</a>
+                <div class="line"></div>
             </div>
-
-            <div class="clear"></div>
-            <div class="line"></div>
-        </div>
             `;
-
-        preferentialContainer.innerHTML += preferentialContents;
+            preferentialContainer.innerHTML += preferentialContents;
         }
-        
     }
 
-    getRequest("http://127.0.0.1:8081/getMerchant?id=" + id, function(json) {
+    getRequest("getMerchant?id=" + id, function(json) {
         var result = JSON.parse(json);
         if (result.code == 200) {
             render(result.data);

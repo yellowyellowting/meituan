@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IP地址存储</title>
+    <style>
+        input {
+        width: 200px;
+        outline: none;
+    }
+    </style>
+</head>
+
+<body>
+    <label>输入你的服务器host</label><input type="text" id="host-input" />
+    <br />
+    <button id="save-btn">保存本地</button>
+    <script>
+        var hostInput = document.querySelector('#host-input');
+        var saveBtn = document.querySelector('#save-btn');
+        saveBtn.onclick = function () {
+            var host = hostInput.value;
+            if (host) {
+                if (/^http:\/\/.+\/$/.test(host)) {
+                    localStorage.setItem("host", host);
+                    alert("host修改成功");
+                } else {
+                    alert("host必须以http://开头，以/结尾!");
+                }
+            } else {
+                alert("host不能为空!");
+            }
+        }
+    </script>
+</body>
+
+</html>

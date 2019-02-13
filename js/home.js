@@ -1,28 +1,24 @@
 
-// 轮播图
+// 轮播图，函数自调用
 (function (carousel) {
-
+    //获取节点
     var carousels = carousel.querySelectorAll(".carousel");
     var indicators = carousel.querySelectorAll(".carousel-indicators > .item");
     var nextBtn = carousel.querySelector(".carousel-control.right");
     var prevBtn = carousel.querySelector(".carousel-control.left");
-
-    // console.log(carousels);
-    // console.log(indicators);
-    // console.log(nextBtn);
-    // console.log(prevBtn);
-
+    //取图片和指示器的最小值，保证图片丢失的情况下依然可以轮播
     var total = Math.min(carousels.length, indicators.length);
-    var currPosition = 0;
 
+    var currPosition = 0;
     var interval;
 
     function switchCarousel(position) {
+        //取余，保证当前位置小于最小值
         currPosition = (position + total) % total;
         // console.log("position: " + position + ", currPosition: " + currPosition);
         for (var i = 0; i < total; i++) {
             if (i == currPosition) {
-                carousels[i].setAttribute("active", true);
+                carousels[i].setAttribute("active", true);//active=true,显示图片
                 indicators[i].setAttribute("active", true);
             } else {
                 carousels[i].removeAttribute("active");
@@ -30,26 +26,26 @@
             }
         }
     }
-
+    // 轮播图切换方法
     function startCarousel() {
         interval = setInterval(function () {
             switchCarousel(currPosition + 1);
         }, 2000);
     }
 
-
+    //停止轮播方法
     function stopCarousel() {
         clearInterval(interval);
     }
-
+    //鼠标放上去便停止轮播
     carousel.onmouseover = function () {
         stopCarousel();
     }
-
+    //鼠标移开开始轮播
     carousel.onmouseout = function () {
         startCarousel();
     }
-
+    //点击轮播
     prevBtn.onclick = function () {
         switchCarousel(currPosition - 1);
     }
@@ -65,21 +61,15 @@
     startCarousel();
 })(document.querySelector(".banner-slider"));
 
-// 选项卡切换
+// 选项卡切换方法
 function selectCard(container) {
 
     var navItems = container.querySelectorAll(".nav-item");
     var selectedIcon = container.querySelectorAll(".selected-icon");
     var selectedItmes = container.querySelectorAll(".selected-itmes");
 
-
-    console.log(container);
-    // console.log(selectedIcon);
-    // console.log(selectedItmes);
-
     var currNavItems = 0;
     for (let i = 0; i < navItems.length; i++) {
-        console.log(111);
         navItems[i].onmouseover = function () {
             for (let j = 0; j < selectedItmes.length; j++) {
                 if (i == j) {
@@ -93,9 +83,7 @@ function selectCard(container) {
         }
     }
 }
-
-
-
+//侧边栏导航渲染
 var navs = [
     {
         title: "美食",
@@ -192,11 +180,12 @@ for (let i = 0; i < navs.length; i++) {
     navWrapper.innerHTML += str;
 }
 
-// 有格调
+// 有格调数据渲染，数据存于数据库
 (function (container) {
     var qualityTitles = container.querySelector('.quality-titles');
     var qualityContents = container.querySelector('.quality-contents');
 
+    //标题栏渲染
     function renderTitleItem(title, position) {
         var html = `
             <li class="nav-item">${title}
@@ -205,7 +194,7 @@ for (let i = 0; i < navs.length; i++) {
         `;
         qualityTitles.innerHTML += html;
     }
-
+    //内容渲染函数
     function renderContentItem(qualities, position) {
         var innerHtml = "";
         qualities.forEach(function (quality) {
@@ -239,21 +228,21 @@ for (let i = 0; i < navs.length; i++) {
                 renderContentItem(element.remendList, index);
             });
         }
-        selectCard(container);
+        selectCard(container);//切换选项卡
     }
-
-    getRequest("http://127.0.0.1:8081/getQualities", function (json) {
-        var result = JSON.parse(json);
+    //连接后端获取有格调数据进行网页渲染
+    var f = function (json) {
+        var result = JSON.parse(json);//字符串转换为对象，便于渲染
         if (result.code == 200) {
-            render(result.data);
+            render(result.data);//后端传来所需数据存于data中
         }
-    });
+    };
+    getRequest("getQualities", f);
 
 })(document.querySelector('.quality-container'));
 
 
-//很优惠渲染
-
+// 很优惠渲染
 (function (container) {
     var cheapTitles = container.querySelector('.cheap-titles');
     var cheapContents = container.querySelector('.cheap-cotents');
@@ -302,13 +291,13 @@ for (let i = 0; i < navs.length; i++) {
     function render(cheaps) {
         if (cheaps) {
             cheaps.forEach(function (element, index) {
-                renderTitleItem(element.category, index)
+                renderTitleItem(element.category, index);
                 renderContentItem(element.remendList, index);
             });
         }
         selectCard(container);
     }
-    getRequest("http://127.0.0.1:8081/getCheaps", function (json) {
+    getRequest("getCheaps", function (json) {
         var result = JSON.parse(json);
         if (result.code == 200) {
             render(result.data);
@@ -319,42 +308,40 @@ for (let i = 0; i < navs.length; i++) {
 
 
 // 猫眼电影渲染
-// 轮播函数
 function Slider(slider) {
     var sliderContent = slider.querySelector(".slider-content");
+    var sliderList = slider.querySelector(".item-list");
     var leftScrollBtn = slider.querySelector(".slider-control.left");
     var rightScrollBtn = slider.querySelector(".slider-control.right");
-    var sliderItems = slider.querySelectorAll(".slider-item-film");
-    var itemsWidth = sliderItems[0].clientWidth * sliderItems.length;
-    console.log(itemsWidth);
-
-    // var sliderDist = sliderContent.clientWidth;
-    // var maxScrollDist = sliderContent.children[0].clientWidth;
 
     var currLeft = 0;
 
-    leftScrollBtn.onclick = function () {
-        // if (sliderContent.scrollLeft - sliderDist > 0) {
-        //     sliderContent.scrollLeft -= sliderDist;
-        // }
+    function startScroll(leftScroll) {
+        var scrollListWidth = sliderList.offsetWidth; //offsetWidth = width + padding + border
+        var onceScrollDist = slider.offsetWidth;
+        
+        var maxScrollDist = parseInt(scrollListWidth / onceScrollDist) * onceScrollDist;
+        if (scrollListWidth % onceScrollDist <= 100) {
+            maxScrollDist -= onceScrollDist;
+        }
 
-        if ((itemsWidth - currLeft - slider.clientWidth) > 0)
-            console.log(itemsWidth - currLeft - slider.clientWidth);
-        currLeft += slider.clientWidth;
-        sliderContent.style.left = currLeft + "px";
-        // console.log(sliderContent.style.left);
+        if (leftScroll) {
+            currLeft = Math.min(currLeft + onceScrollDist, 0);
+            sliderContent.style.left = currLeft + "px";
+        } else {
+            currLeft = Math.max(currLeft - onceScrollDist, -1 * maxScrollDist);
+            sliderContent.style.left = currLeft + "px";
+        }
     }
-    rightScrollBtn.onclick = function () {
-        // if (sliderContent.scrollLeft + sliderDist <= maxScrollDist) {
-        //     sliderContent.scrollLeft += sliderDist;
-        // }
-        if ((itemsWidth - currLeft - slider.clientWidth) > 0)
-            console.log(itemsWidth - currLeft - slider.clientWidth);
-        currLeft -= slider.clientWidth;
-        sliderContent.style.left = currLeft + "px";
-        // console.log(sliderContent.style.left);
+
+    leftScrollBtn.onclick = function() {
+        startScroll(true)
+    }
+    rightScrollBtn.onclick = function() {
+        startScroll(false);
     }
 }
+
 // 数据渲染
 (function (container) {
     var flimTitles = container.querySelector('.film-titles');
@@ -372,25 +359,34 @@ function Slider(slider) {
     function renderContentItem(flims, position) {
         var innerHtml = "";
         flims.forEach(function (film) {
+            var versionHtml = "";
+            if (film.version == 1) {
+                versionHtml = `<img class="film-mark" src="../images/ic_version_3d.png" />`;
+            } else if (film.version == 2) {
+                versionHtml = `<img class="film-mark" src="../images/ic_version_imax.png" />`;
+            }
+
             innerHtml += `
             <div class="slider-item-film">
-            <a href="#">
-            <img class="film-img" src="${film.url}" />
-                                                <img class="imax3d" src="${film.subUrl}" />
-                                                <div class="film-info">
-                                                    <p class="film-score">
-                                                        观众评 <span>9.1</span>
-                                                    </p>
-                                                    <p class="film-name">${film.title}</p>
-                                                    <span class="buy-ticket">购票</span>
-                                                </div>
-                                            </a>
-                                        </div>
+                <a href="film.html?id=${film.id}">
+                    <img class="film-img" src="${film.thumb_url}" />
+                    ${versionHtml}
+                    <div class="film-info">
+                        <p class="film-score">
+                            观众评 <span>9.1</span>
+                        </p>
+                        <p class="film-name">${film.name}</p>
+                        <span class="buy-ticket">购票</span>
+                    </div>
+                </a>
+            </div>
             `;
         });
         flimContents.innerHTML += `
         <div class="slider selected-itmes" ${position == 0 ? 'active="true"' : ''}>
-            <div class="slider-content"> ${innerHtml}</div>
+            <div class="slider-content">
+                <div class="item-list">${innerHtml}</div>
+            </div>
             <div class="slider-control left">
                 <i class="iconfont icon-icon-left"></i>
             </div>
@@ -401,23 +397,27 @@ function Slider(slider) {
    `;
     }
 
-    function render(flims) {
-        if (flims) {
-            flims.forEach(function (element, index) {
-                renderTitleItem(element.category, index)
-                renderContentItem(element.remendList, index);
-            });
+    function render(film) {
+        renderTitleItem("正在热映", 0);
+        renderTitleItem("即将上映", 1);
+        
+        if (film.hot) {
+            renderContentItem(film.hot, 0);
+        }
+        if (film.coming) {
+            renderContentItem(film.coming, 1);
         }
         selectCard(container);
+        var sliders = container.querySelectorAll(".slider");
+        for (let i = 0; i < sliders.length; i++) {
+            Slider(sliders[i]);
+        }
     }
-    getRequest("http://127.0.0.1:8081/getFilms", function (json) {
+
+    getRequest("getFilms", function (json) {
         var result = JSON.parse(json);
         if (result.code == 200) {
             render(result.data);
-        }
-        var slider = document.querySelectorAll(".slider");
-        for (let i = 0; i < slider.length; i++) {
-            Slider(slider[i]);
         }
     });
 
@@ -474,7 +474,7 @@ function Slider(slider) {
         }
         selectCard(container);
     }
-    getRequest("http://127.0.0.1:8081/getMinsu", function (json) {
+    getRequest("getMinsu", function (json) {
         var result = JSON.parse(json);
         if (result.code == 200) {
             render(result.data);
@@ -533,7 +533,7 @@ function Slider(slider) {
         }
         selectCard(container);
     }
-    getRequest("http://127.0.0.1:8081/getRecomends", function (json) {
+    getRequest("getRecomends", function (json) {
         var result = JSON.parse(json);
         if (result.code == 200) {
             render(result.data);
@@ -542,30 +542,12 @@ function Slider(slider) {
 
 })(document.querySelector('.like-container'));
 
-
-
-
-
-(function () {
-    var userEntry = document.querySelector(".user-entry");
-
-    var userInfo = getCookie("userInfo") ? JSON.parse(getCookie("userInfo")) : null;
-    if (userInfo) {
-        userEntry.innerHTML = `<a href="./login.html" class="growth-entry">mt${userInfo.mobile}</a>
-        <a href="#" class="extra-entry">退出</a>`;
-    } else {
-        userEntry.innerHTML = `<a href="./login.html" class="growth-entry">立即登录</a>
-        <a href="./register.html" class="extra-entry">注册</a>`;
-    }
-})();
-
-
 (function () {
     var userLogin = document.querySelector(".login-container");
     var userInfo = getCookie("userInfo") ? JSON.parse(getCookie("userInfo")) : null;
     if (userInfo) {
         userLogin.innerHTML = ` <div class="head-img-row">
-        <a href="./login.html" clss="img-target">
+        <a href="./homepage.html" clss="img-target">
         <img src="../images/logintouxiang.jpg" />
         </a>
       
@@ -603,33 +585,6 @@ function Slider(slider) {
     }
 })();
 
-
-// // 退出
-
-    var dropOut = document.querySelector(".extra-entry");
-    var userEntry = document.querySelector(".user-entry");
-
-    dropOut.onclick = function() {
-        if(dropOut.innerText == "退出") {
-            setCookie("userInfo", "", -1); 
-            userEntry.innerHTML = `<a href="./login.html" class="growth-entry">立即登录</a>
-            <a href="./register.html" class="extra-entry">注册</a>`;
-            var userLogin = document.querySelector(".login-container");
-            userLogin.innerHTML = ` <div class="head-img-row">
-            <img src="../images/avatar.jpg" />
-        </div>
-        <p class="user-name" onclick="login()">Hi！你好</p>
-        <a class="register" href="./register.html">注册</a>
-        <a class="login" href="./login.html">立即登录</a>`;
-        }else{
-            location.assign("./register.html");
-        }
-        }
-
-    
-
-
-
 var headerSearchInput = document.querySelector(".header-search-input");
 var headerSearchSuggest = document.querySelector(".header-search-suggest");
 headerSearchInput.onfocus = function () {
@@ -640,20 +595,9 @@ headerSearchInput.onblur = function () {
     headerSearchSuggest.removeAttribute("active", "true");
 }
 
-
-var offerContainer = document.querySelectorAll(".offer-container")[0];
 var maoyanContainer = document.querySelectorAll(".maoyan-container")[0];
 var minsuContainer = document.querySelectorAll(".zhenguo-container")[0];
-selectCard(offerContainer);
+
 selectCard(maoyanContainer);
 selectCard(minsuContainer);
 
-
-// var login = document.querySelector(".growth-entry");
-// login.onclick = function () {
-//     location.assign("./login.html");
-// }
-// var registery = document.querySelector(".extra-entry");
-// registery.onclick = function () {
-//     location.assign("./register.html");
-// }
